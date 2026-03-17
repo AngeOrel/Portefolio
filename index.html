@@ -47,6 +47,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .ref-item{font-size:.78rem;color:var(--ink-soft);line-height:1.65;}
 .ref-item strong{color:var(--ink);font-weight:600;display:block;margin-bottom:.1rem;}
 .ref-item a{color:var(--accent-lt);}
+.ref-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;}
+@media(max-width:860px){.ref-list{grid-template-columns:1fr;}}
 .page{max-width:1280px;margin:0 auto;padding:0 4vw;}
 .section-wrap{padding:4.5rem 0;}
 .section-wrap+.section-wrap{border-top:1px solid var(--line);}
@@ -220,7 +222,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
     </div>
     <div>
       <div class="qb-label">Références</div>
-      <div style="display:flex;flex-direction:column;gap:.8rem;">
+      <div class="ref-list">
         <div class="ref-item">
           <strong>Guillaume Fayaud</strong>
           Naomis<br>
