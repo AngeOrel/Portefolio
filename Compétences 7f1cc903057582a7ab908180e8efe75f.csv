@@ -1,0 +1,30 @@
+﻿Nom,Afficher ?,liste
+Développement Web,No,Développement procédural et static
+No-Code,No,Notion
+Gestion de projet,No,Notion et GitHub
+Suite office,No,Word PowerPoint Exel
+Développement Logiciel,No,Java orienté objet
+Base de données,No,JDBC et SQL
+(à supprimer / ancien),No,
+Acquisition terrain / topographie / bathymétrie,Yes,"- Levés topographiques (GPS différentiel, station totale, niveau)
+- Levés bathymétriques (echosondeur)"
+Drone / photogrammétrie / LiDAR (chaîne de production),Yes,"- Pilotage de drone
+- Stéréo-préparation
+- Traitement photogrammétrique
+- Traitement LiDAR
+- Production d’orthophotos"
+Automatisation de traitements SIG (approche workflow),Yes,"- Conception de chaînes de traitement
+- Modélisation de traitements (logique de workflows)"
+3D / modélisation,Yes,"- Production de modèles 3D (texturés)
+- Production de modèles numériques (terrain / surfaces)"
+Données géographiques (structuration / modélisation),Yes,"- Structuration, exploitation et valorisation de données géographiques
+- Modélisation de données spatiales"
+Analyse spatiale & cartographie,Yes,"- Analyse spatiale
+- Analyse statistique
+- Modélisation spatiale
+- Cartographie & sémiologie graphique
+- Réalisation de cartes thématiques"
+Gestion de projet / AMOA SIG,Yes,"- Recueil des besoins métiers
+- Traduction des besoins en solutions SIG opérationnelles"
+Formation / transmission,Yes,- Formation à l’usage d’équipements topo et d’outils SIG (niveau opérateur)
+WebSIG,Yes,- Conception et mise en place de solutions WebSIG
