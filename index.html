@@ -3,14 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orel Bohoussou — Géomaticien</title>
+
+<!-- ═══ SEO & Partage réseaux sociaux ═══ -->
+<title>Orel Bohoussou — Géomaticien SIG 3D</title>
+<meta name="description" content="Portfolio d'Orel Bohoussou, géomaticien spécialisé en SIG 3D, jumeaux numériques, LiDAR, photogrammétrie et automatisation de traitements géospatiaux.">
+<meta property="og:title" content="Orel Bohoussou — Géomaticien SIG 3D">
+<meta property="og:description" content="Pilotage de projets SIG & données territoriales. Spécialisé SIG 3D, LiDAR, photogrammétrie, automatisation Python.">
+<meta property="og:image" content="photo.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f1a2e">
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111827;--ink-soft:#374151;--ink-muted:#6B7280;--paper:#F9F8F5;--paper-warm:#F0EDE6;--white:#FFFFFF;--accent:#1A6B55;--accent-lt:#2D9E7F;--accent-pale:#E0F0EB;--gold:#B97A2A;--gold-pale:#FDF3E3;--blue:#1E4A8A;--blue-pale:#E6EDF7;--line:rgba(17,24,39,.09);--nav-h:56px;--r:10px;}
+:root{
+  --ink:#111827;--ink-soft:#374151;--ink-muted:#6B7280;
+  --paper:#F9F8F5;--paper-warm:#F0EDE6;--white:#FFFFFF;
+  --accent:#1A6B55;--accent-lt:#2D9E7F;--accent-pale:#E0F0EB;
+  --gold:#B97A2A;--gold-pale:#FDF3E3;
+  --blue:#1E4A8A;--blue-pale:#E6EDF7;
+  --line:rgba(17,24,39,.09);--nav-h:56px;--r:10px;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;font-size:15px;}
 body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;overflow-x:hidden;}
-img{display:block;}a{color:inherit;text-decoration:none;}
+img{display:block;}
+a{color:inherit;text-decoration:none;}
+
+/* ── scroll offset pour nav fixe ── */
+section[id], div[id]{scroll-margin-top:calc(var(--nav-h) + 1.5rem);}
+
+/* ══ NAV ══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(17,24,39,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);}
 .nav-brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.15rem;color:#fff;letter-spacing:.04em;}
 .nav-links{display:flex;gap:1.6rem;list-style:none;}
@@ -18,6 +40,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .nav-links a:hover{color:#fff;}
 .nav-cv-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .85rem;border:1px solid var(--accent-lt);border-radius:6px;font-size:.68rem;font-weight:600;color:var(--accent-lt);letter-spacing:.08em;text-transform:uppercase;transition:all .2s;}
 .nav-cv-btn:hover{background:var(--accent-lt);color:#fff;}
+
+/* ══ HERO ══ */
 .hero{margin-top:var(--nav-h);min-height:390px;max-height:470px;display:flex;align-items:center;overflow:hidden;position:relative;background:linear-gradient(130deg,#0f1a2e 0%,#1a3a5c 55%,#0e2d22 100%);}
 .hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.03) 39px,rgba(255,255,255,.03) 40px);pointer-events:none;}
 .hero-top-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent-lt),var(--gold),var(--accent-lt));}
@@ -34,6 +58,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .hero-photo{flex-shrink:0;width:clamp(125px,13vw,175px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.14);box-shadow:0 0 0 6px rgba(45,158,127,.13),0 20px 50px rgba(0,0,0,.4);background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;}
 .hero-photo img{width:100%;height:100%;object-fit:cover;}
 .hero-photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:rgba(255,255,255,.28);font-size:.6rem;letter-spacing:.08em;text-align:center;text-transform:uppercase;padding:1rem;}
+
+/* ══ QUICK BAR ══ */
 .quick-bar{background:var(--white);border-bottom:1px solid var(--line);}
 .quick-bar-inner{max-width:1280px;margin:0 auto;padding:1.3rem 4vw;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem 2.5rem;}
 .qb-label{font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.55rem;display:flex;align-items:center;gap:.5rem;}
@@ -48,7 +74,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .ref-item strong{color:var(--ink);font-weight:600;display:block;margin-bottom:.1rem;}
 .ref-item a{color:var(--accent-lt);}
 .ref-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;}
-@media(max-width:860px){.ref-list{grid-template-columns:1fr;}}
+
+/* ══ PAGE / LAYOUT ══ */
 .page{max-width:1280px;margin:0 auto;padding:0 4vw;}
 .section-wrap{padding:4.5rem 0;}
 .section-wrap+.section-wrap{border-top:1px solid var(--line);}
@@ -58,9 +85,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .two-col{display:grid;grid-template-columns:1fr 1.65fr;gap:4rem;align-items:start;}
 .two-col-equal{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
 .parcours-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;}
-.narrative p{font-size:.93rem;font-weight:300;color:var(--ink-soft);line-height:1.88;margin-bottom:1.2rem;}
+.narrative p{font-size:.93rem;font-weight:300;color:var(--ink-soft);line-height:1.88;margin-bottom:1.2rem;text-align:justify;}
 .narrative p:last-child{margin-bottom:0;}
 .narrative p strong{color:var(--ink);font-weight:600;}
+
+/* ══ EXPÉRIENCES ══ */
 .exp-list{display:flex;flex-direction:column;gap:.8rem;}
 .exp-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.2rem;display:grid;grid-template-columns:52px 1fr auto;gap:.7rem 1rem;align-items:center;transition:box-shadow .2s,transform .15s;}
 .exp-card:hover{box-shadow:0 6px 20px rgba(17,24,39,.07);transform:translateY(-1px);}
@@ -74,6 +103,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .tag-alt{background:var(--blue-pale);color:var(--blue);}
 .tag-stage{background:var(--gold-pale);color:var(--gold);}
 .tag-cdi{background:var(--accent-pale);color:var(--accent);}
+
+/* ══ FORMATION ══ */
 .formation-cards{display:flex;flex-direction:column;gap:.85rem;}
 .forma-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.15rem 1.35rem;transition:box-shadow .2s;}
 .forma-card:hover{box-shadow:0 4px 18px rgba(17,24,39,.07);}
@@ -81,9 +112,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .forma-year{font-size:.6rem;font-weight:700;letter-spacing:.05em;color:var(--accent);background:var(--accent-pale);padding:.2rem .42rem;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-top:.1rem;}
 .forma-name{font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:.14rem;}
 .forma-school{font-size:.76rem;color:var(--ink-muted);}
-.forma-desc{font-size:.81rem;color:var(--ink-muted);border-top:1px solid var(--line);margin-top:.6rem;padding-top:.6rem;line-height:1.65;font-style:italic;}
-.forma-desc-placeholder{display:flex;align-items:center;gap:.5rem;color:rgba(107,114,128,.45);font-size:.74rem;}
-.forma-desc-placeholder svg{opacity:.35;flex-shrink:0;}
+.forma-desc{font-size:.81rem;color:var(--ink-soft);border-top:1px solid var(--line);margin-top:.6rem;padding-top:.6rem;line-height:1.65;}
+
+/* ══ COMPÉTENCES ══ */
 .comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;}
 .comp-card{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:.95rem 1.05rem;transition:box-shadow .2s,transform .15s;}
 .comp-card:hover{box-shadow:0 4px 14px rgba(17,24,39,.07);transform:translateY(-1px);}
@@ -91,6 +122,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .comp-bullets{list-style:none;display:flex;flex-direction:column;gap:.2rem;}
 .comp-bullets li{font-size:.76rem;color:var(--ink-soft);padding-left:.8rem;position:relative;line-height:1.5;}
 .comp-bullets li::before{content:'·';position:absolute;left:0;color:var(--accent-lt);font-size:1.1rem;line-height:1.1;}
+
+/* ══ OUTILS ══ */
 .tools-group-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink-muted);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem;}
 .tools-group-label::after{content:'';flex:1;height:1px;background:var(--line);}
 .tools-wrap{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.7rem;}
@@ -105,8 +138,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .skill-pct{font-size:.68rem;color:var(--ink-muted);}
 .skill-bar{height:4px;background:var(--paper-warm);border-radius:99px;overflow:hidden;}
 .skill-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-lt));}
+
+/* ══ PROJETS — grille ══ */
+.projects-disclaimer{font-size:.8rem;color:var(--ink-muted);font-style:italic;margin-bottom:2rem;display:flex;align-items:flex-start;gap:.5rem;}
+.projects-disclaimer svg{flex-shrink:0;margin-top:.1rem;opacity:.5;}
 .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-.proj-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .2s,transform .15s;cursor:pointer;}
+
+/* FIX CRITIQUE : position relative manquante sur proj-card */
+.proj-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:box-shadow .2s,transform .15s;cursor:pointer;
+  position:relative; /* ← fix pour le badge ::after */
+}
 .proj-card:hover{box-shadow:0 8px 28px rgba(17,24,39,.1);transform:translateY(-2px);}
 .proj-thumb{aspect-ratio:16/9;overflow:hidden;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;}
@@ -116,7 +159,39 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .proj-title{font-weight:600;font-size:.86rem;color:var(--ink);line-height:1.4;margin-bottom:.28rem;}
 .proj-cat{font-size:.68rem;color:var(--ink-muted);display:flex;align-items:center;gap:.3rem;}
 .proj-cat::before{content:'';display:block;width:10px;height:1.5px;background:var(--accent-lt);}
-.proj-coming{font-size:.68rem;color:rgba(107,114,128,.4);font-style:italic;margin-top:.25rem;}
+
+/* Badge rôle sur carte */
+.proj-role-badge{
+  font-size:.65rem;font-weight:500;color:var(--accent);
+  margin-top:.35rem;display:flex;align-items:center;gap:.3rem;
+}
+.proj-role-badge svg{opacity:.7;}
+
+/* Badge "Voir →" au hover */
+.proj-card::after{
+  content:'Voir le détail →';
+  position:absolute;bottom:.85rem;right:.85rem;
+  background:var(--accent);color:#fff;
+  padding:.28rem .65rem;border-radius:4px;
+  font-size:.65rem;font-weight:600;
+  opacity:0;transform:translateY(6px);
+  transition:all .2s;pointer-events:none;
+}
+.proj-card:hover::after{opacity:1;transform:translateY(0);}
+
+/* Badge liens démo/github sur carte */
+.proj-links{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.45rem;}
+.proj-link-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  padding:.22rem .6rem;border-radius:4px;
+  font-size:.62rem;font-weight:600;letter-spacing:.03em;
+  transition:all .15s;
+}
+.proj-link-badge.websig{background:var(--blue-pale);color:var(--blue);}
+.proj-link-badge.github{background:#f0f0f0;color:#333;}
+.proj-link-badge:hover{filter:brightness(.92);}
+
+/* ══ CV ══ */
 #cv{background:var(--ink);padding:4rem 0;}
 .cv-inner{max-width:1280px;margin:0 auto;padding:0 4vw;}
 .cv-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
@@ -129,15 +204,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 .cv-frame-wrap iframe{display:block;width:100%;height:780px;border:none;}
 .cv-fallback{display:none;padding:2rem;text-align:center;color:var(--ink-muted);font-size:.88rem;}
 .cv-fallback a{color:var(--accent);}
+
+/* ══ FOOTER ══ */
 footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.3);text-align:center;padding:1.5rem;font-size:.72rem;}
-@media(max-width:1100px){.comp-grid{grid-template-columns:repeat(2,1fr);}.quick-bar-inner{grid-template-columns:repeat(2,1fr);}.projects-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:860px){.two-col,.two-col-equal,.parcours-wrap{grid-template-columns:1fr;gap:2.5rem;}.hero-inner{grid-template-columns:1fr;}.hero-photo{display:none;}.comp-grid{grid-template-columns:1fr;}.skills-layout{grid-template-columns:1fr;}nav .nav-links{display:none;}.cv-frame-wrap iframe{height:500px;}.projects-grid{grid-template-columns:1fr;}.quick-bar-inner{grid-template-columns:1fr;}}
-.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s;}.panel-overlay.open{opacity:1;pointer-events:auto;}
-.side-panel{position:fixed;top:0;right:0;width:min(640px,95vw);height:100vh;background:var(--white);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:310;overflow-y:auto;display:flex;flex-direction:column;}.side-panel.open{transform:translateX(0);}
-.panel-close{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.1);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:320;border:none;}.panel-close svg{stroke-width:2.2;}
-.panel-hero{aspect-ratio:16/7;overflow:hidden;position:relative;}.panel-hero img{width:100%;height:100%;object-fit:cover;}
-.panel-cat-badge{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,.7);color:#fff;padding:.4rem .8rem;border-radius:6px;font-size:.75rem;font-weight:500;}
-.panel-body{flex:1;overflow-y:auto;padding:1.6rem 1.8rem;display:flex;flex-direction:column;gap:1.5rem;}
+
+/* ══ PANEL LATÉRAL ══ */
+.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s;}
+.panel-overlay.open{opacity:1;pointer-events:auto;}
+.side-panel{position:fixed;top:0;right:0;width:min(640px,95vw);height:100vh;background:var(--white);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:310;overflow-y:auto;display:flex;flex-direction:column;}
+.side-panel.open{transform:translateX(0);}
+
+/* Bouton fermer — fond sombre pour lisibilité sur image claire ou sombre */
+.panel-close{
+  position:absolute;top:1rem;right:1rem;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(17,24,39,.7);backdrop-filter:blur(4px);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:320;border:none;
+  transition:background .2s;
+}
+.panel-close:hover{background:rgba(17,24,39,.95);}
+
+.panel-hero{aspect-ratio:16/7;overflow:hidden;position:relative;background:var(--paper-warm);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.panel-hero img{width:100%;height:100%;object-fit:cover;}
+.panel-hero-placeholder{display:flex;flex-direction:column;align-items:center;gap:.6rem;color:rgba(107,114,128,.3);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;}
+.panel-cat-badge{position:absolute;bottom:1rem;left:1rem;background:rgba(17,24,39,.7);backdrop-filter:blur(4px);color:#fff;padding:.35rem .8rem;border-radius:6px;font-size:.72rem;font-weight:500;}
+.panel-body{flex:1;padding:1.6rem 1.8rem 2.5rem;display:flex;flex-direction:column;gap:1.5rem;}
 .panel-title{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:600;color:var(--ink);line-height:1.2;}
 .panel-role{display:flex;align-items:center;gap:.6rem;font-size:.88rem;font-weight:600;color:var(--accent);background:var(--accent-pale);padding:.55rem 1rem;border-radius:8px;}
 .panel-role svg{width:18px;height:18px;flex-shrink:0;}
@@ -147,25 +239,62 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
 .meta-chip.period{background:var(--paper-warm);color:var(--ink-muted);}
 .meta-chip.type{background:var(--accent-pale);color:var(--accent);}
 .meta-chip.tool{background:var(--gold-pale);color:var(--gold);}
+
+/* Liens démo/github dans le panel */
+.panel-links{display:flex;flex-wrap:wrap;gap:.6rem;}
+.panel-link-btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.45rem 1rem;border-radius:7px;
+  font-size:.78rem;font-weight:600;
+  transition:all .15s;border:none;cursor:pointer;text-decoration:none;
+}
+.panel-link-btn.websig{background:var(--blue);color:#fff;}
+.panel-link-btn.websig:hover{background:#1a3d72;}
+.panel-link-btn.github{background:#24292f;color:#fff;}
+.panel-link-btn.github:hover{background:#000;}
+.panel-link-btn svg{width:15px;height:15px;flex-shrink:0;}
+
 .panel-section{display:flex;flex-direction:column;gap:.8rem;}
-.panel-section-title{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:.6rem;}.panel-section-title::after{content:'';flex:1;height:1px;background:var(--line);}
+.panel-section-title{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:.6rem;}
+.panel-section-title::after{content:'';flex:1;height:1px;background:var(--line);}
 .panel-text{font-size:.88rem;color:var(--ink-soft);line-height:1.78;font-weight:300;}
+.panel-text strong{color:var(--ink);font-weight:600;}
 .panel-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;}
 .panel-list li{display:flex;align-items:flex-start;gap:.6rem;font-size:.88rem;color:var(--ink-soft);line-height:1.6;}
-.panel-list li::before{content:'→';color:var(--accent-lt);font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.panel-list li::before{content:'→';color:var(--accent-lt);font-size:.9rem;flex-shrink:0;margin-top:.15rem;}
 .panel-livrables{display:flex;flex-wrap:wrap;gap:.5rem;}
-.livrable-chip{display:inline-block;padding:.4rem .8rem;background:var(--accent-pale);color:var(--accent);border-radius:6px;font-size:.8rem;font-weight:500;border:1px solid var(--accent-lt);transition:all .15s;}
-.livrable-chip:hover{background:var(--accent);color:#fff;}
-.panel-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}.gallery-img{border-radius:6px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;transition:transform .15s;}
-.gallery-img:hover{transform:scale(1.02);}
+.livrable-chip{display:inline-block;padding:.38rem .8rem;background:var(--accent-pale);color:var(--accent);border-radius:6px;font-size:.78rem;font-weight:500;border:1px solid rgba(45,158,127,.25);}
+
+/* Galerie 2 colonnes */
+.panel-gallery{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.gallery-img{border-radius:8px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;transition:transform .15s,box-shadow .15s;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--ink-muted);}
+.gallery-img:hover{transform:scale(1.02);box-shadow:0 4px 16px rgba(17,24,39,.12);}
 .gallery-img img{width:100%;height:100%;object-fit:cover;}
-@media(max-width:500px){.panel-gallery{grid-template-columns:1fr;}}.proj-card.has-detail{cursor:pointer;}
-.proj-card.has-detail::after{content:'Voir →';position:absolute;bottom:1rem;right:1rem;background:var(--accent);color:#fff;padding:.3rem .6rem;border-radius:4px;font-size:.7rem;font-weight:600;opacity:0;transform:translateY(10px);transition:all .2s;}
-.proj-card.has-detail:hover::after{opacity:1;transform:translateY(0);}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1100px){
+  .comp-grid{grid-template-columns:repeat(2,1fr);}
+  .quick-bar-inner{grid-template-columns:repeat(2,1fr);}
+  .projects-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:860px){
+  .two-col,.two-col-equal,.parcours-wrap{grid-template-columns:1fr;gap:2.5rem;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-photo{display:none;}
+  .comp-grid{grid-template-columns:1fr;}
+  .skills-layout{grid-template-columns:1fr;}
+  nav .nav-links{display:none;}
+  .cv-frame-wrap iframe{height:500px;}
+  .projects-grid{grid-template-columns:1fr;}
+  .quick-bar-inner{grid-template-columns:1fr;}
+  .ref-list{grid-template-columns:1fr;}
+  .panel-gallery{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
 
+<!-- ════════ NAV ════════ -->
 <nav>
   <span class="nav-brand">Orel Bohoussou</span>
   <ul class="nav-links">
@@ -181,6 +310,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
   </a>
 </nav>
 
+<!-- ════════ HERO ════════ -->
 <header class="hero">
   <div class="hero-top-line"></div>
   <div class="hero-inner">
@@ -213,9 +343,10 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
         <span class="contact-pill">🚗 Permis B</span>
       </div>
     </div>
-    <!-- PHOTO : renommez votre photo "photo.jpg" et placez-la dans le même dossier que index.html -->
+    <!-- PHOTO : renommez votre photo "photo.jpg" dans le même dossier que index.html -->
     <div class="hero-photo">
-      <img src="photo.jpg" alt="Orel Bohoussou" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <img src="photo.jpg" alt="Orel Bohoussou" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
       <div class="hero-photo-placeholder" style="display:none;">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         <span>photo.jpg</span>
@@ -224,13 +355,13 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
   </div>
 </header>
 
-<!-- QUICK-INFO BAR -->
+<!-- ════════ QUICK BAR ════════ -->
 <div class="quick-bar">
   <div class="quick-bar-inner">
     <div>
       <div class="qb-label">Langues</div>
-      <div class="lang-row"><span> 🇫🇷 Français</span><span class="lang-level">Langue maternelle</span></div>
-      <div class="lang-row"><span> 🇬🇧 Anglais</span><span class="lang-level">B1 — Opérationnel</span></div>
+      <div class="lang-row"><span>🇫🇷 Français</span><span class="lang-level">Langue maternelle</span></div>
+      <div class="lang-row"><span>🇬🇧 Anglais</span><span class="lang-level">B1 — Opérationnel</span></div>
     </div>
     <div>
       <div class="qb-label">Centres d'intérêt</div>
@@ -264,47 +395,44 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
           <a href="mailto:fofanam1@yahoo.fr">fofanam1@yahoo.fr</a>
         </div>
       </div>
-      </div>
     </div>
   </div>
 </div>
 
 <div class="page">
 
-  <!-- PARCOURS -->
+  <!-- ════════ PARCOURS ════════ -->
   <section class="section-wrap" id="parcours">
     <div class="section-label">Mon histoire</div>
     <h2 class="section-title">Parcours</h2>
     <div class="parcours-wrap">
       <div class="narrative">
-        <p style="text-align: justify;">Tout a commencé sur le terrain, à Abidjan — drone en main, GPS à l'épaule. Fraîchement diplômé de l'INPHB en tant que géomètre topographe, j'ai l'occasion de travailler sur des projets d'envergure : <strong>relevés LiDAR, bathymétrie et orthophotographies</strong>. C'est là que je pilote mon premier drone, et que je comprends le pouvoir de la donnée terrain.</p>
-        <p style="text-align: justify;">La curiosité me pousse ensuite vers la géomatique. Je rejoins l'IUA d'Abidjan, où mes résultats me valent une sélection pour une double diplomation — un tremplin qui m'ouvre les portes de <strong>Nantes Université et d'un Master 2 en Géomatique, Environnement et Risque côtier</strong>.</p>
-        <p style="text-align: justify;">Ce saut entre deux continents, deux systèmes de formation et deux façons de travailler m'a rendu <strong>adaptable, autonome</strong> et profondément convaincu que la géomatique est un outil stratégique — pas seulement technique. C'est lors de mon stage chez Naomis que tout prend une nouvelle dimension — au sens littéral. Travailler sur un <strong>SIG 3D pour le SDIS de Saint-Barthélemy</strong> m'a confirmé ma passion pour la modélisation 3D et les jumeaux numériques : cette capacité à reconstruire le territoire dans sa réalité volumique, pour mieux anticiper, décider et agir.</p>
-        <p style="text-align: justify;">Aujourd'hui, je poursuis le <strong>Mastère Spécialisé SILAT d'AgroParisTech</strong> pour approfondir mes compétences techniques en SIG et en télédétection, tout en acquérant une vraie dimension managériale pour piloter des projets géomatiques complexes de bout en bout.</p>
+        <p>Tout a commencé sur le terrain, à Abidjan — drone en main, GPS à l'épaule. Fraîchement diplômé de l'INPHB en tant que géomètre topographe, j'ai l'occasion de travailler sur des projets d'envergure : <strong>relevés LiDAR, bathymétrie et orthophotographies</strong>. C'est là que je pilote mon premier drone, et que je comprends le pouvoir de la donnée terrain.</p>
+        <p>La curiosité me pousse ensuite vers la géomatique. Je rejoins l'IUA d'Abidjan, où mes résultats me valent une sélection pour une double diplomation — un tremplin qui m'ouvre les portes de <strong>Nantes Université et d'un Master 2 en Géomatique, Environnement et Risque côtier</strong>.</p>
+        <p>Ce saut entre deux continents, deux systèmes de formation et deux façons de travailler m'a rendu <strong>adaptable, autonome</strong> et profondément convaincu que la géomatique est un outil stratégique — pas seulement technique. C'est lors de mon stage chez Naomis que tout prend une nouvelle dimension — au sens littéral. Travailler sur un <strong>SIG 3D pour le SDIS de Saint-Barthélemy</strong> m'a confirmé ma passion pour la modélisation 3D et les jumeaux numériques.</p>
+        <p>Aujourd'hui, je poursuis le <strong>Mastère Spécialisé SILAT d'AgroParisTech</strong> pour approfondir mes compétences techniques en SIG et en télédétection, tout en acquérant une vraie dimension managériale pour piloter des projets géomatiques complexes de bout en bout.</p>
       </div>
       <div id="experiences">
         <div class="section-label" style="margin-bottom:.45rem;">Expériences</div>
         <div class="exp-list">
-          <!-- La Cove — logo : placez logo-lacove.png dans le dossier -->
           <div class="exp-card">
-            <a href="https://www.lacove.fr/accueil.html" target="_blank">
+            <a href="https://www.lacove.fr/accueil.html" target="_blank" rel="noopener">
               <div class="exp-logo">
-                <img src="logo-lacove.png" alt="La Cove" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <img src="logo-lacove.png" alt="La Cove" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                 <div class="exp-logo-fallback" style="display:none">LC</div>
               </div>
             </a>
             <div>
               <div class="exp-role">Géomaticien SIG / DATA</div>
-              <div class="exp-company">La Cove · Carpentras,France</div>
+              <div class="exp-company">La Cove · Carpentras, France</div>
               <span class="exp-tag tag-alt">Alternance</span>
             </div>
             <div class="exp-period">Oct. 2025<br>→ Sep. 2026</div>
           </div>
-          <!-- Naomis — logo : placez naomis.png dans le dossier -->
           <div class="exp-card">
-            <a href="https://naomis.fr/" target="_blank">
+            <a href="https://naomis.fr/" target="_blank" rel="noopener">
               <div class="exp-logo">
-                <img src="naomis.png" alt="Naomis" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <img src="naomis.png" alt="Naomis" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                 <div class="exp-logo-fallback" style="display:none">N</div>
               </div>
             </a>
@@ -315,11 +443,10 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
             </div>
             <div class="exp-period">Avr. 2025<br>→ Sep. 2025</div>
           </div>
-          <!-- BIG-BTP — logo : placez logo-bigbtp.png dans le dossier -->
           <div class="exp-card">
-            <a href="https://bigbtp.com/" target="_blank">
+            <a href="https://bigbtp.com/" target="_blank" rel="noopener">
               <div class="exp-logo">
-                <img src="logo-bigbtp.png" alt="BIG-BTP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <img src="logo-bigbtp.png" alt="BIG-BTP" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                 <div class="exp-logo-fallback" style="display:none">BB</div>
               </div>
             </a>
@@ -330,40 +457,37 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
             </div>
             <div class="exp-period">Oct. 2022<br>→ Août 2024</div>
           </div>
-          <!-- INPHB — logo : placez logo-inphb.png dans le dossier -->
           <div class="exp-card">
-            <a href="https://inphb.edu.ci/" target="_blank">
+            <a href="https://inphb.edu.ci/" target="_blank" rel="noopener">
               <div class="exp-logo">
-                <img src="logo-inphb.png" alt="INPHB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <img src="logo-inphb.png" alt="INPHB" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                 <div class="exp-logo-fallback" style="display:none">INPHB</div>
               </div>
             </a>
             <div>
               <div class="exp-role">Géomètre-topographe</div>
-              <div class="exp-company">Département Génie Rural et Sciences Géographiques · Yamoussoukro, Côte d'Ivoire</div>
-              <span class="exp-tag tag-stage">Stage</span>
+              <div class="exp-company">Département Génie Rural · INP-HB, Yamoussoukro</div>
+              <span class="exp-tag tag-stage">Stage PFE</span>
             </div>
-            <div class="exp-period">févr. 2022<br>→ juin 2022</div>
+            <div class="exp-period">Fév. 2022<br>→ Juin 2022</div>
           </div>
-          <!-- ATELIER BENCAT -->
           <div class="exp-card">
             <div class="exp-logo">
-              <img src="" alt="ATELIER BENCAT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
-              <div class="exp-logo-fallback" style="display:flex;">AB</div>
+              <div class="exp-logo-fallback" style="display:flex">AB</div>
             </div>
             <div>
               <div class="exp-role">Géomètre-topographe</div>
-              <div class="exp-company">ATELIER BENCAT · Abidjan, Côte d'Ivoire</div>
-              <span class="exp-tag tag-stage">Stage</span>
+              <div class="exp-company">Atelier Bencat · Abidjan, Côte d'Ivoire</div>
+              <span class="exp-tag tag-stage">Stage école</span>
             </div>
-            <div class="exp-period">juil. 2021<br>→ août 2021</div>
+            <div class="exp-period">Juil. 2021<br>→ Août 2021</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FORMATION -->
+  <!-- ════════ FORMATION ════════ -->
   <section class="section-wrap" id="formation">
     <div class="two-col">
       <div>
@@ -376,35 +500,34 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
             <div><div class="forma-name">Mastère Spécialisé SILAT</div><div class="forma-school">AgroParisTech · Montpellier</div></div>
             <div class="forma-year">2025–2026</div>
           </div>
-          <!-- DESCRIPTION : remplacez le placeholder par votre texte entre les balises <div class="forma-desc"> -->
-          <div class="forma-desc"><div class="forma-desc-placeholder"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Le Mastère Spécialisé SILAT (Systèmes d’Informations Localisées pour l’Aménagement des Territoires) forme des spécialistes capables de piloter des projets géomatiques complexes, en combinant des compétences avancées en SIG, en télédétection, en gestion de données et en management de projet territorial. </div></div>
+          <div class="forma-desc">Le Mastère Spécialisé SILAT (Systèmes d'Informations Localisées pour l'Aménagement des Territoires) forme des spécialistes capables de piloter des projets géomatiques complexes, en combinant des compétences avancées en SIG, en télédétection, en gestion de données et en management de projet territorial.</div>
         </div>
         <div class="forma-card">
           <div class="forma-header">
             <div><div class="forma-name">Master GER — Géomatique, Environnement &amp; Risque</div><div class="forma-school">Nantes Université · Nantes</div></div>
             <div class="forma-year">2024–2025</div>
           </div>
-          <div class="forma-desc"><div class="forma-desc-placeholder"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Le master GER (Géomatique Environnement et Risque) forme des professionnels de la gestion des risques induits par les changements environnementaux sous un angle résolument méthodologique. Cette spécialisation, intégrant une approche pluridisciplinaire, aborde ainsi les concepts, méthodes et outils de la géomatique afin de les mobiliser dans le cadre de démarches visant la résilience des territoires et la réduction de leur vulnérabilité face aux aléas.</div></div>
+          <div class="forma-desc">Le master GER forme des professionnels de la gestion des risques induits par les changements environnementaux sous un angle résolument méthodologique. Cette spécialisation, intégrant une approche pluridisciplinaire, aborde les concepts, méthodes et outils de la géomatique afin de les mobiliser dans le cadre de démarches visant la résilience des territoires et la réduction de leur vulnérabilité face aux aléas.</div>
         </div>
         <div class="forma-card">
           <div class="forma-header">
             <div><div class="forma-name">Master G-IEA — Géomatique</div><div class="forma-school">IUA · Abidjan (double diplomation Nantes Univ.)</div></div>
             <div class="forma-year">2023–2024</div>
           </div>
-          <div class="forma-desc"><div class="forma-desc-placeholder"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Master en Géomatique – Ingénierie de l’environnement et de l’aménagement, une formation dédiée à l’analyse et à la gestion des territoires à l’aide des technologies géospatiales (SIG, télédétection, analyse de données). Formation professionnalisante combinant enseignements académiques, outils techniques et projets appliqués liés aux enjeux d’aménagement et d’environnement. Au cours de ce master, j’ai été sélectionné pour le programme de double diplomation avec l’Université de Nantes, incluant une mobilité internationale en Master 2.</div></div>
+          <div class="forma-desc">Master en Géomatique – Ingénierie de l'environnement et de l'aménagement, formation dédiée à l'analyse et à la gestion des territoires via les technologies géospatiales. Sélectionné pour le programme de double diplomation avec l'Université de Nantes, incluant une mobilité internationale en Master 2.</div>
         </div>
         <div class="forma-card">
           <div class="forma-header">
             <div><div class="forma-name">Géomètre-Topographe</div><div class="forma-school">École Supérieure de Travaux Publics · INP-HB, Yamoussoukro</div></div>
             <div class="forma-year">2019–2022</div>
           </div>
-          <div class="forma-desc"><div class="forma-desc-placeholder"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>La formation de Géomètre-Topographe de l’École supérieure de travaux publics à l’INP-HB forme des techniciens capables de réaliser des levés topographiques et de produire des plans nécessaires aux projets d’aménagement et de génie civil. Elle permet d’acquérir des compétences en mesure de terrain, en cartographie et en implantation d’ouvrages. Les étudiants apprennent à utiliser des instruments de précision et des logiciels de CAO/DAO et SIG. La formation combine enseignements théoriques, travaux pratiques et sorties de terrain. </div></div>
+          <div class="forma-desc">Formation de techniciens capables de réaliser des levés topographiques et produire les plans nécessaires aux projets d'aménagement et de génie civil. Acquisition de compétences en mesure de terrain, cartographie et implantation d'ouvrages, avec utilisation d'instruments de précision et de logiciels CAO/DAO et SIG.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMPÉTENCES -->
+  <!-- ════════ COMPÉTENCES ════════ -->
   <section class="section-wrap" id="competences">
     <div class="section-label">Savoir-faire</div>
     <h2 class="section-title">Compétences métier</h2>
@@ -412,7 +535,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
       <div class="comp-card"><div class="comp-card-title">🌍 Acquisition terrain</div><ul class="comp-bullets"><li>GPS différentiel, station totale, niveau</li><li>Levés bathymétriques (échosondeur)</li></ul></div>
       <div class="comp-card"><div class="comp-card-title">🚁 Drone / Photogrammétrie / LiDAR</div><ul class="comp-bullets"><li>Pilotage, stéréo-préparation</li><li>Traitement photogrammétrique &amp; LiDAR</li><li>Production d'orthophotos</li></ul></div>
       <div class="comp-card"><div class="comp-card-title">📐 3D / Modélisation</div><ul class="comp-bullets"><li>Modèles 3D texturés</li><li>MNT / MNS / MNE</li></ul></div>
-      <div class="comp-card"><div class="comp-card-title">⚙️ Automatisation SIG</div><ul class="comp-bullets"><li>Conception de chaînes de traitement</li><li>Model Builder &amp; Modeleur QGIS</li></ul></div>
+      <div class="comp-card"><div class="comp-card-title">⚙️ Automatisation SIG</div><ul class="comp-bullets"><li>Conception de chaînes de traitement</li><li>Python / Model Builder / Modeleur QGIS</li></ul></div>
       <div class="comp-card"><div class="comp-card-title">🗄️ Données géographiques</div><ul class="comp-bullets"><li>Structuration &amp; valorisation</li><li>Modélisation de données spatiales</li></ul></div>
       <div class="comp-card"><div class="comp-card-title">🗺️ Analyse spatiale &amp; Carto</div><ul class="comp-bullets"><li>Analyse spatiale &amp; statistique</li><li>Sémiologie graphique</li></ul></div>
       <div class="comp-card"><div class="comp-card-title">📋 Gestion de projet / AMOA</div><ul class="comp-bullets"><li>Recueil des besoins métiers</li><li>Solutions SIG opérationnelles</li></ul></div>
@@ -420,7 +543,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
     </div>
   </section>
 
-  <!-- OUTILS + LANGAGES -->
+  <!-- ════════ OUTILS + LANGAGES ════════ -->
   <section class="section-wrap">
     <div class="two-col-equal">
       <div>
@@ -428,20 +551,20 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
         <h2 class="section-title">Logiciels</h2>
         <div class="tools-group-label">SIG &amp; Géomatique</div>
         <div class="tools-wrap">
-          <div class="tool-chip"><img src="https://qgis.org/en/_static/images/qgis-logo.png" alt="QGIS" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">Q</span>QGIS</div>
-          <div class="tool-chip"><img src="https://developers.arcgis.com/assets/img/logo-arcgis.png" alt="ArcGIS" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">A</span>ArcGIS</div>
-          <div class="tool-chip"><img src="https://damassets.autodesk.net/content/dam/autodesk/www/product-imagery/badge-imagery/autocad-logo-color-204.png" alt="AutoCAD" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">AC</span>AutoCAD / Covadis</div>
-          <div class="tool-chip"><img src="https://www.agisoft.com/wp-content/themes/agisoft/images/logo.png" alt="Metashape" style="border-radius:3px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">MS</span>Metashape</div>
-          <div class="tool-chip"><img src="https://www.cloudcompare.org/images/logo.png" alt="CloudCompare" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">CC</span>CloudCompare</div>
-          <div class="tool-chip"><img src="https://www.bluemarblegeo.com/wp-content/uploads/2020/04/global-mapper-logo.png" alt="Global Mapper" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">GM</span>Global Mapper</div>
-          <div class="tool-chip"><img src="https://www.ecognition.com/wp-content/themes/ecognition/images/logo.png" alt="eCognition" style="width:16px;height:16px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">eC</span>eCognition</div>
+          <div class="tool-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/QGIS_logo%2C_2017.svg/32px-QGIS_logo%2C_2017.svg.png" alt="QGIS" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">Q</span>QGIS</div>
+          <div class="tool-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/ArcGIS_logo.png/32px-ArcGIS_logo.png" alt="ArcGIS" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">A</span>ArcGIS</div>
+          <div class="tool-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/AutoCAD_2023_logo.svg/32px-AutoCAD_2023_logo.svg.png" alt="AutoCAD" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">AC</span>AutoCAD / Covadis</div>
+          <div class="tool-chip"><img src="https://www.agisoft.com/favicon.ico" alt="Metashape" loading="lazy" style="border-radius:3px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">MS</span>Metashape</div>
+          <div class="tool-chip"><img src="https://www.cloudcompare.org/doc/wiki/images/thumb/3/3b/CC_logo.png/32px-CC_logo.png" alt="CloudCompare" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">CC</span>CloudCompare</div>
+          <div class="tool-chip"><img src="https://www.trimble.com/favicon.ico" alt="eCognition" loading="lazy" style="width:16px;height:16px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">eC</span>eCognition</div>
+          <div class="tool-chip"><img src="https://www.bluemarblegeo.com/wp-content/uploads/2020/04/global-mapper-logo.png" alt="Global Mapper" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">GM</span>Global Mapper</div>
         </div>
         <div class="tools-group-label">Dev &amp; Productivité</div>
         <div class="tools-wrap">
-          <div class="tool-chip"><img src="https://cdn.simpleicons.org/github/111827" alt="GitHub" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">GH</span>Git / GitHub</div>
-          <div class="tool-chip"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">VS</span>VS Code</div>
-          <div class="tool-chip"><img src="https://cdn.simpleicons.org/microsoftoffice/D83B01" alt="Office" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">O</span>Suite Office</div>
-          <div class="tool-chip"><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">N</span>Notion</div>
+          <div class="tool-chip"><img src="https://cdn.simpleicons.org/github/111827" alt="GitHub" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">GH</span>Git / GitHub</div>
+          <div class="tool-chip"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">VS</span>VS Code</div>
+          <div class="tool-chip"><img src="https://cdn.simpleicons.org/microsoftoffice/D83B01" alt="Office" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">O</span>Suite Office</div>
+          <div class="tool-chip"><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">N</span>Notion</div>
         </div>
       </div>
       <div>
@@ -458,62 +581,124 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
     </div>
   </section>
 
-  <!-- PROJETS -->
+  <!-- ════════ PROJETS ════════ -->
   <section class="section-wrap" id="projets">
     <div class="section-label">Réalisations</div>
     <h2 class="section-title">Projets majeurs réalisés</h2>
-    <div style="font-size:.8rem;color:var(--ink-muted);font-style:italic;margin-bottom:2rem;">
-      La majorité de ces projets étant récents et certaines données restant la propriété
-      des entreprises commanditaires, il ne m'a pas été possible de fournir davantage de visuels.
+    <div class="projects-disclaimer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>
+      La majorité de ces projets étant récents et certaines données restant la propriété des entreprises commanditaires, il ne m'a pas été possible de fournir davantage de visuels.
     </div>
-    <!--
-      AJOUTER UNE IMAGE : dans .proj-thumb, ajoutez <img src="votre-image.jpg" alt="...">
-      et supprimez le bloc .proj-thumb-placeholder
-    -->
     <div class="projects-grid">
-      <div class="proj-card has-detail" onclick="openPanel('lagunaire')">
+
+      <!-- Carte 1 : Transport lagunaire -->
+      <div class="proj-card" onclick="openPanel('lagunaire')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Mise en place de 10 quais de transport lagunaire — Lagune Ébrié, Abidjan</div><div class="proj-cat">Topographie · Bathymétrie · Drone</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">10 quais de transport lagunaire — Lagune Ébrié, Abidjan</div>
+          <div class="proj-cat">Topographie · Bathymétrie · Drone</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Opérateur bathy &amp; Pilote drone</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('lidar_autoroute')">
+
+      <!-- Carte 2 : LiDAR autoroute -->
+      <div class="proj-card" onclick="openPanel('lidar_autoroute')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Étude LiDAR — Protection de l'autoroute du Nord contre les crues</div><div class="proj-cat">LiDAR · Lasergrammétrie · Chef d'équipe</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">Étude LiDAR — Protection autoroute du Nord contre les crues</div>
+          <div class="proj-cat">LiDAR · Lasergrammétrie</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Chef d'équipe</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('par_abidjan')">
+
+      <!-- Carte 3 : PAR Abidjan -->
+      <div class="proj-card" onclick="openPanel('par_abidjan')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Plans d'Action de Réinstallation (PAR) — Projets routiers Abidjan</div><div class="proj-cat">Photogrammétrie · Drone · Milieu urbain</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">PAR — Projets routiers Abidjan (milieu urbain)</div>
+          <div class="proj-cat">Photogrammétrie · Drone · Réglementaire</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Pilote drone &amp; Production ortho</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('par_interieur')">
+
+      <!-- Carte 4 : PAR Intérieur -->
+      <div class="proj-card" onclick="openPanel('par_interieur')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Plans d'Action de Réinstallation — Routes intérieures & Collecte terrain</div><div class="proj-cat">Drone · SIG · Collecte de données</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">PAR — Routes intérieures &amp; Collecte terrain</div>
+          <div class="proj-cat">Drone · SIG · Collecte de données</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Pilote, ortho &amp; Formulaire collecte</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('sig3d')">
+
+      <!-- Carte 5 : SIG 3D -->
+      <div class="proj-card" onclick="openPanel('sig3d')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">SIG 3D / Jumeau numérique — SDIS Saint-Barthélemy</div><div class="proj-cat">Modélisation 3D · Automatisation · Stage Naomis</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">SIG 3D / Jumeau numérique — SDIS Saint-Barthélemy</div>
+          <div class="proj-cat">Modélisation 3D · Automatisation Python</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Modélisation, automation &amp; indicateurs</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('formation')">
+
+      <!-- Carte 6 : Formation -->
+      <div class="proj-card" onclick="openPanel('formation')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Formation topographique & SIG — Génie militaire & partenaires externes</div><div class="proj-cat">Formation · Pédagogie · Transmission</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">Formation topo &amp; SIG — Génie militaire &amp; partenaires</div>
+          <div class="proj-cat">Formation · Pédagogie · QGIS &amp; Metashape</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Formateur</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('centrafrique')">
+
+      <!-- Carte 7 : Centrafrique -->
+      <div class="proj-card" onclick="openPanel('centrafrique')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Levé LiDAR & Orthophotographie — Route Bossembélé–Baoro, Centrafrique</div><div class="proj-cat">LiDAR · International · Route 241 km</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">LiDAR &amp; Orthophotos — Route Bossembélé–Baoro, Centrafrique</div>
+          <div class="proj-cat">LiDAR · International · 241 km</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Chaîne complète — Pilote, LiDAR, Carto</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('autoSIG')">
+
+      <!-- Carte 8 : Automatisation SIG -->
+      <!--
+        Quand vous avez un repo GitHub public pour ce projet, remplacez
+        data-github="https://github.com/AngeOrel/NOM-DU-REPO"
+        sur la carte et dans l'objet projects → autoSIG → links
+      -->
+      <div class="proj-card" onclick="openPanel('autoSIG')">
+        <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Capture à venir</span></div></div>
+        <div class="proj-body">
+          <div class="proj-title">Automatisation SIG — Outil découpe Python &amp; Workflows BD</div>
+          <div class="proj-cat">Python · GeoPandas · Tkinter · PostGIS</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Développeur SIG</div>
+          <!-- Badge GitHub visible dès la carte -->
+          <div class="proj-links">
+            <a href="https://github.com/AngeOrel" target="_blank" rel="noopener" class="proj-link-badge github" onclick="event.stopPropagation()">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.09-.75.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.68.83.57C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 9 : Cartographie -->
+      <div class="proj-card" onclick="openPanel('carto')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Automatisation SIG — Outil de découpe Python & Workflows BD</div><div class="proj-cat">Python · Automatisation · La Cove</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body">
+          <div class="proj-title">Réalisation de cartes thématiques</div>
+          <div class="proj-cat">Cartographie · Sémiologie graphique · QGIS</div>
+          <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Cartographe</div>
+        </div>
       </div>
-      <div class="proj-card has-detail" onclick="openPanel('carto')">
-        <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Réalisation de cartes thématiques</div><div class="proj-cat">Cartographie · Sémiologie graphique</div><div class="proj-coming">Détails à venir</div></div>
-      </div>
+
     </div>
   </section>
 
-</div>
+</div><!-- /page -->
 
-<!-- CV VIEWER -->
-<!-- PDF : placez Orel_bohoussou_CV.pdf dans le même dossier que index.html -->
+<!-- ════════ CV ════════ -->
 <section id="cv">
   <div class="cv-inner">
     <div class="cv-header">
@@ -535,74 +720,71 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
 
 <footer><p>© 2025 Orel Bohoussou — Géomaticien · SIG 3D · Données territoriales</p></footer>
 
+<!-- ════════ PANEL OVERLAY + SIDE PANEL ════════ -->
+<div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
+<div class="side-panel" id="sidePanel">
+  <button class="panel-close" onclick="closePanel()" aria-label="Fermer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <div id="panelContent"></div>
+</div>
+
 <script>
-document.getElementById('cvIframe').addEventListener('error',()=>{
-  document.getElementById('cvIframe').style.display='none';
-  document.getElementById('cvFallback').style.display='block';
-});
-</script>
-<script>
+/* ────────────────────────────────────────────────
+   DONNÉES PROJETS
+   ─────────────────────────────────────────────────
+   Champ "links" optionnel :
+     { type: "websig", label: "Voir la démo", url: "https://..." }
+     { type: "github", label: "Code source",  url: "https://github.com/..." }
+──────────────────────────────────────────────── */
 const projects = {
 
-  /* ══ 1. Transport lagunaire — 10 quais, Lagune Ébrié ══ */
   lagunaire: {
     title: "Mise en place de 10 quais de transport lagunaire — Lagune Ébrié, Abidjan",
     category: "Topographie · Bathymétrie · Drone",
     role: "Opérateur relevé bathymétrique & Pilote drone",
     image: "proj-lagunaire.jpg",
-    gallery: ["proj-lagunaire-2.jpg", "proj-lagunaire-3.jpg", "proj-lagunaire-4.jpg"],
-    meta: [
-      { label: "BIG-BTP · Abidjan", type: "client" },
-      { label: "2022 – 2024", type: "period" },
-      { label: "CDI", type: "type" },
-      { label: "Échosondeur", type: "tool" },
-      { label: "Pix4D", type: "tool" },
-      { label: "QGIS", type: "tool" },
+    gallery: ["proj-lagunaire-2.jpg","proj-lagunaire-3.jpg","proj-lagunaire-4.jpg"],
+    meta:[
+      {label:"BIG-BTP · Abidjan",type:"client"},
+      {label:"2022 – 2024",type:"period"},
+      {label:"CDI",type:"type"},
+      {label:"Échosondeur",type:"tool"},
+      {label:"Pix4D",type:"tool"},
+      {label:"QGIS",type:"tool"},
     ],
-    context: `Étude complète préalable à la mise en place de <strong>10 nouveaux quais
-    d'embarquement</strong> sur le réseau de transport lagunaire d'Abidjan, Lagune Ébrié.
-    Ce projet illustre une approche multi-technique : relevés terrestres, milieu aquatique
-    et acquisition aérienne fusionnés en un seul référentiel géographique cohérent.`,
-    mission: [
+    links: [],
+    context:`Étude complète préalable à la mise en place de <strong>10 nouveaux quais d'embarquement</strong> sur le réseau de transport lagunaire d'Abidjan, Lagune Ébrié. Ce projet illustre une approche multi-technique : relevés terrestres, milieu aquatique et acquisition aérienne fusionnés en un seul référentiel géographique cohérent.`,
+    mission:[
       "Levés bathymétriques des plans d'eau sur les 10 sites concernés (opérateur)",
       "Pilotage drone et acquisition des données aériennes",
       "Levés de détails topographiques sur les zones d'accès terrestres",
       "Traitement photogrammétrique et production des orthophotographies",
       "Production des plans et cartes de synthèse pour la maîtrise d'ouvrage",
     ],
-    livrables: [
-      "Plans bathymétriques des 10 sites",
-      "Orthophotos haute résolution",
-      "Plans topographiques d'état des lieux",
-      "Référentiel géographique multi-source",
-    ],
-    result: `La combinaison des trois modalités d'acquisition (sol, eau, air) a fourni
-    à la maîtrise d'ouvrage un <strong>référentiel complet et cohérent</strong>
-    pour dimensionner les quais et planifier les travaux sur l'ensemble des 10 sites
-    en milieu lagunaire.`,
+    livrables:["Plans bathymétriques des 10 sites","Orthophotos haute résolution","Plans topographiques d'état des lieux","Référentiel géographique multi-source"],
+    result:`La combinaison des trois modalités d'acquisition (sol, eau, air) a fourni à la maîtrise d'ouvrage un <strong>référentiel complet et cohérent</strong> pour dimensionner les quais et planifier les travaux sur l'ensemble des 10 sites en milieu lagunaire.`,
   },
 
-  /* ══ 2. LiDAR — Protection autoroute du Nord ══ */
   lidar_autoroute: {
     title: "Étude LiDAR — Protection de l'autoroute du Nord contre les crues",
     category: "LiDAR · Lasergrammétrie · Chef d'équipe",
     role: "Chef d'équipe — Stéréo-préparation, Pilote drone, Post-traitement",
     image: "proj-lidar.jpg",
-    gallery: ["proj-lidar-2.jpg", "proj-lidar-3.jpg", "proj-lidar-4.jpg"],
-    meta: [
-      { label: "BIG-BTP · Côte d'Ivoire", type: "client" },
-      { label: "2022 – 2024", type: "period" },
-      { label: "CDI", type: "type" },
-      { label: "CloudCompare", type: "tool" },
-      { label: "Copre / Coprocess", type: "tool" },
-      { label: "QGIS", type: "tool" },
+    gallery: ["proj-lidar-2.jpg","proj-lidar-3.jpg","proj-lidar-4.jpg"],
+    meta:[
+      {label:"BIG-BTP · Côte d'Ivoire",type:"client"},
+      {label:"2022 – 2024",type:"period"},
+      {label:"CDI",type:"type"},
+      {label:"CloudCompare",type:"tool"},
+      {label:"Copre / Coprocess",type:"tool"},
+      {label:"QGIS",type:"tool"},
     ],
-    context: `Étude topographique LiDAR pour la <strong>protection de l'autoroute du Nord
-    contre la montée des eaux</strong>, portant sur 3 affluents interceptés par la retenue
-    d'eau de l'aménagement hydroélectrique de Singrobo-Ahouatyen, en cours de construction.
-    Mission conduite en tant que <strong>chef d'équipe</strong>, avec responsabilité
-    sur l'intégralité de la chaîne de production.`,
-    mission: [
+    links: [],
+    context:`Étude topographique LiDAR pour la <strong>protection de l'autoroute du Nord contre la montée des eaux</strong>, portant sur 3 affluents interceptés par la retenue d'eau de l'aménagement hydroélectrique de Singrobo-Ahouatyen, en cours de construction. Mission conduite en tant que <strong>chef d'équipe</strong>, avec responsabilité sur l'intégralité de la chaîne de production.`,
+    mission:[
       "Planification et stéréo-préparation de la mission de vol (responsable)",
       "Pilotage drone pour l'acquisition des données LiDAR",
       "Post-traitement complet du nuage de points (filtrage, classification, densification)",
@@ -610,307 +792,220 @@ const projects = {
       "Cartographie de synthèse pour les ingénieurs hydrauliciens",
       "Coordination de l'équipe terrain et respect des délais",
     ],
-    livrables: [
-      "Nuages de points LiDAR classifiés",
-      "MNT / MNS / MNE haute précision",
-      "Profils en long des 3 affluents",
-      "Cartes de synthèse hydraulique",
-    ],
-    result: `En tant que chef d'équipe, j'ai assuré la <strong>maîtrise complète de la
-    chaîne LiDAR</strong> — de la préparation du vol à la livraison des données
-    post-traitées. Les livrables ont directement alimenté les calculs hydrauliques
-    pour le dimensionnement des ouvrages de protection.`,
+    livrables:["Nuages de points LiDAR classifiés","MNT / MNS / MNE haute précision","Profils en long des 3 affluents","Cartes de synthèse hydraulique"],
+    result:`En tant que chef d'équipe, j'ai assuré la <strong>maîtrise complète de la chaîne LiDAR</strong> — de la préparation du vol à la livraison des données post-traitées. Les livrables ont directement alimenté les calculs hydrauliques pour le dimensionnement des ouvrages de protection.`,
   },
 
-  /* ══ 3. PAR Urbain — Abidjan (milieu urbain habité) ══ */
   par_abidjan: {
     title: "Plans d'Action de Réinstallation (PAR) — Projets routiers Abidjan",
     category: "Photogrammétrie · Drone · Milieu urbain",
     role: "Pilote drone & Producteur d'orthophotographies",
     image: "proj-par.jpg",
-    gallery: ["proj-par-2.jpg", "proj-par-3.jpg"],
-    meta: [
-      { label: "BIG-BTP · Abidjan", type: "client" },
-      { label: "2022 – 2024", type: "period" },
-      { label: "CDI", type: "type" },
-      { label: "Pix4D", type: "tool" },
-      { label: "Metashape", type: "tool" },
-      { label: "QGIS", type: "tool" },
+    gallery: ["proj-par-2.jpg","proj-par-3.jpg"],
+    meta:[
+      {label:"BIG-BTP · Abidjan",type:"client"},
+      {label:"2022 – 2024",type:"period"},
+      {label:"CDI",type:"type"},
+      {label:"Pix4D",type:"tool"},
+      {label:"Metashape",type:"tool"},
+      {label:"QGIS",type:"tool"},
     ],
-    context: `Production d'orthophotographies numériques pour les Plans d'Action de
-    Réinstallation de plusieurs projets routiers à Abidjan, dont le
-    <strong>prolongement du boulevard Mitterrand</strong> et la
-    <strong>réhabilitation de l'ancienne voie de Bingerville</strong>.
-    Contrainte majeure : les zones de travail étaient des <strong>milieux urbains
-    denses et habités</strong>, impliquant une stricte conformité à la réglementation
-    aérienne ivoirienne — plan de vol adapté, autorisations préalables, gestion
-    des espaces aériens contrôlés et de la sécurité au sol.`,
-    mission: [
+    links: [],
+    context:`Production d'orthophotographies numériques pour les Plans d'Action de Réinstallation de plusieurs projets routiers à Abidjan, dont le <strong>prolongement du boulevard Mitterrand</strong> et la <strong>réhabilitation de l'ancienne voie de Bingerville</strong>. Contrainte majeure : <strong>milieux urbains denses et habités</strong> — stricte conformité à la réglementation aérienne ivoirienne, plans de vol adaptés, autorisations préalables, gestion des espaces contrôlés et sécurité au sol.`,
+    mission:[
       "Obtention des autorisations de vol en zone urbaine habitée",
       "Adaptation du plan de vol aux contraintes réglementaires et environnementales",
       "Pilotage drone en milieu urbain dense (gestion obstacles, sécurité sol)",
       "Traitement photogrammétrique et production des orthophotographies",
-      "Cartographie de synthèse pour les PAR (périmètres impactés, biens, personnes)",
+      "Cartographie de synthèse pour les PAR",
     ],
-    livrables: [
-      "Orthophotos haute résolution (milieu urbain)",
-      "Cartographies PAR (emprise, biens impactés)",
-      "Plans de vol documentés et conformes",
-    ],
-    result: `La maîtrise des contraintes réglementaires du vol en zone urbaine a permis
-    de <strong>livrer les données dans les délais</strong> tout en garantissant la
-    conformité légale des opérations. Les orthophotographies ont servi de base
-    de référence pour les dossiers PAR soumis aux bailleurs internationaux.`,
+    livrables:["Orthophotos haute résolution (milieu urbain)","Cartographies PAR (emprise, biens impactés)","Plans de vol documentés et conformes"],
+    result:`La maîtrise des contraintes réglementaires du vol en zone urbaine a permis de <strong>livrer les données dans les délais</strong> tout en garantissant la conformité légale. Les orthophotographies ont servi de base de référence pour les dossiers PAR soumis aux bailleurs internationaux.`,
   },
 
-  /* ══ 4. PAR Intérieur — Collecte de données terrain ══ */
   par_interieur: {
     title: "Plans d'Action de Réinstallation — Routes intérieures & Collecte terrain",
     category: "Drone · SIG · Collecte de données",
     role: "Pilote drone, Production ortho & Concepteur formulaire de collecte",
     image: "proj-par-int.jpg",
-    gallery: ["proj-par-int-2.jpg", "proj-par-int-3.jpg"],
-    meta: [
-      { label: "BIG-BTP · Côte d'Ivoire", type: "client" },
-      { label: "2022 – 2024", type: "period" },
-      { label: "CDI", type: "type" },
-      { label: "Pix4D", type: "tool" },
-      { label: "KoboToolbox / ODK", type: "tool" },
-      { label: "QGIS", type: "tool" },
+    gallery: ["proj-par-int-2.jpg","proj-par-int-3.jpg"],
+    meta:[
+      {label:"BIG-BTP · Côte d'Ivoire",type:"client"},
+      {label:"2022 – 2024",type:"period"},
+      {label:"CDI",type:"type"},
+      {label:"Pix4D",type:"tool"},
+      {label:"KoboToolbox / ODK",type:"tool"},
+      {label:"QGIS",type:"tool"},
     ],
-    context: `Réalisation de PAR pour des projets routiers en zones rurales de Côte
-    d'Ivoire (Mankono–Zuénoula, Zuénoula–Béoumi, TOUMBOKRO–ANGOVIA).
-    En plus de la production d'orthophotos, ces missions intégraient une
-    <strong>collecte de données socio-spatiales sur les personnes impactées</strong>
-    par les projets (recensement, inventaire des biens, géolocalisation).`,
-    mission: [
+    links: [],
+    context:`Réalisation de PAR pour des projets routiers en zones rurales de Côte d'Ivoire (Mankono–Zuénoula, Zuénoula–Béoumi, TOUMBOKRO–ANGOVIA). En plus de la production d'orthophotos, ces missions intégraient une <strong>collecte de données socio-spatiales sur les personnes impactées</strong> par les projets.`,
+    mission:[
       "Pilotage drone et production des orthophotographies des corridors routiers",
       "Conception d'un formulaire de collecte terrain pour le recensement des impactés",
       "Recensement des personnes et familles impactées par les emprises routières",
       "Levé et géolocalisation des biens impactés (parcelles, bâtiments, cultures)",
       "Création et alimentation de la base de données des impactés",
-      "Production cartographique PAR (emprise, biens, localisation des impactés)",
+      "Production cartographique PAR complète",
     ],
-    livrables: [
-      "Formulaire de collecte terrain",
-      "Base de données des impactés",
-      "Orthophotos des corridors",
-      "Cartographies PAR complètes",
-    ],
-    result: `La conception du formulaire de collecte a <strong>standardisé et
-    accéléré la saisie terrain</strong>, réduisant les erreurs de ressaisie et
-    facilitant l'intégration directe dans la base de données SIG.
-    Ces dossiers PAR ont été soumis et validés par les bailleurs de fonds internationaux.`,
+    livrables:["Formulaire de collecte terrain","Base de données des impactés","Orthophotos des corridors","Cartographies PAR complètes"],
+    result:`La conception du formulaire de collecte a <strong>standardisé et accéléré la saisie terrain</strong>, réduisant les erreurs de ressaisie et facilitant l'intégration directe dans la base de données SIG. Ces dossiers PAR ont été validés par les bailleurs de fonds internationaux.`,
   },
 
-  /* ══ 5. Jumeau numérique — SDIS Saint-Barthélemy ══ */
   sig3d: {
     title: "SIG 3D / Jumeau numérique — SDIS Saint-Barthélemy",
     category: "Modélisation 3D · Automatisation · Stage Naomis",
     role: "Géomaticien SIG 3D — Modélisation, Automatisation & Indicateurs",
     image: "proj-sig3d.jpg",
-    gallery: ["proj-sig3d-2.jpg", "proj-sig3d-3.jpg", "proj-sig3d-4.jpg"],
-    meta: [
-      { label: "Naomis · Nantes", type: "client" },
-      { label: "Avr. – Sep. 2025", type: "period" },
-      { label: "Stage", type: "type" },
-      { label: "Metashape", type: "tool" },
-      { label: "Python / API Metashape", type: "tool" },
-      { label: "QGIS", type: "tool" },
-      { label: "CloudCompare", type: "tool" },
+    gallery: ["proj-sig3d-2.jpg","proj-sig3d-3.jpg","proj-sig3d-4.jpg"],
+    meta:[
+      {label:"Naomis · Nantes",type:"client"},
+      {label:"Avr. – Sep. 2025",type:"period"},
+      {label:"Stage",type:"type"},
+      {label:"Metashape",type:"tool"},
+      {label:"Python / API Metashape",type:"tool"},
+      {label:"QGIS",type:"tool"},
+      {label:"CloudCompare",type:"tool"},
     ],
-    context: `Le SDIS de Saint-Barthélemy souhaitait disposer d'un outil de
-    <strong>visualisation 3D de son territoire</strong> pour améliorer la planification
-    des interventions d'urgence. L'enjeu : construire un jumeau numérique opérationnel
-    à partir de données photogrammétriques, enrichi d'indicateurs de risque.`,
-    mission: [
+    /* ─────────────────────────────────────────────────────
+       Quand votre WebSIG est en ligne, ajoutez :
+       { type:"websig", label:"Voir le viewer 3D", url:"https://..." }
+       ───────────────────────────────────────────────────── */
+    links: [],
+    context:`Le SDIS de Saint-Barthélemy souhaitait disposer d'un outil de <strong>visualisation 3D de son territoire</strong> pour améliorer la planification des interventions d'urgence. L'enjeu : construire un jumeau numérique opérationnel à partir de données photogrammétriques, enrichi d'indicateurs de risque.`,
+    mission:[
       "Production des modèles 3D texturés couvrant 30 km² à partir de données photogrammétriques",
       "Conception et développement d'un workflow automatisé dans Metashape via Python/API Metashape",
-      "Gain de temps x3 sur les traitements — réduction significative de l'intervention humaine",
+      "Gain de temps ×3 sur les traitements — réduction significative de l'intervention humaine",
       "Construction d'indicateurs de risque spatialisés (accès, hauteur, végétation, occupation du sol)",
       "Choix et implémentation des fonctionnalités du viewer 3D interactif",
       "Analyse documentaire, entretiens internes, rédaction de l'étude prospective",
     ],
-    livrables: [
-      "Modèles 3D texturés (30 km²)",
-      "Workflow automatisé Python/Metashape",
-      "Couches d'indicateurs de risque",
-      "Viewer 3D interactif",
-      "Étude prospective SIG 3D",
-    ],
-    result: `L'automatisation des traitements photogrammétriques via Python/API Metashape
-    a permis de <strong>diviser par 3 le temps de production</strong> des modèles 3D,
-    tout en réduisant les risques d'erreur liés à l'intervention humaine.
-    Le viewer 3D livre aux équipes du SDIS une lecture volumique directe du territoire
-    pour anticiper et planifier les interventions.`,
+    livrables:["Modèles 3D texturés (30 km²)","Workflow automatisé Python/Metashape","Couches d'indicateurs de risque","Viewer 3D interactif","Étude prospective SIG 3D"],
+    result:`L'automatisation des traitements via Python/API Metashape a permis de <strong>diviser par 3 le temps de production</strong> des modèles 3D tout en réduisant les risques d'erreur. Le viewer 3D offre aux équipes du SDIS une lecture volumique directe du territoire pour anticiper et planifier les interventions.`,
   },
 
-  /* ══ 6. Formation — Génie militaire & partenaires ══ */
   formation: {
     title: "Formation topographique & SIG — Génie militaire & partenaires externes",
     category: "Formation · Pédagogie · Transmission",
     role: "Formateur — Équipements topo, QGIS & Metashape",
     image: "proj-formation.jpg",
     gallery: ["proj-formation-2.jpg"],
-    meta: [
-      { label: "BIG-BTP / Projet GAUFF", type: "client" },
-      { label: "2022 – 2024", type: "period" },
-      { label: "CDI", type: "type" },
-      { label: "GPS différentiel", type: "tool" },
-      { label: "Station totale", type: "tool" },
-      { label: "QGIS", type: "tool" },
-      { label: "Metashape", type: "tool" },
+    meta:[
+      {label:"BIG-BTP / Projet GAUFF",type:"client"},
+      {label:"2022 – 2024",type:"period"},
+      {label:"CDI",type:"type"},
+      {label:"GPS différentiel",type:"tool"},
+      {label:"Station totale",type:"tool"},
+      {label:"QGIS",type:"tool"},
+      {label:"Metashape",type:"tool"},
     ],
-    context: `En parallèle de mes missions terrain, j'ai assuré des <strong>sessions
-    de formation à destination du génie militaire (Projet GAUFF)</strong> et de
-    partenaires externes, sur l'utilisation des équipements topographiques et
-    des outils SIG et photogrammétriques. Ces formations reflètent ma capacité
-    à <strong>vulgariser des savoir-faire techniques complexes</strong>
-    auprès d'un public non spécialiste.`,
-    mission: [
+    links: [],
+    context:`En parallèle de mes missions terrain, j'ai assuré des <strong>sessions de formation à destination du génie militaire (Projet GAUFF)</strong> et de partenaires externes, sur l'utilisation des équipements topographiques et des outils SIG et photogrammétriques.`,
+    mission:[
       "Formation au génie militaire : GPS différentiels, stations totales, niveaux (Projet GAUFF)",
       "Formation de partenaires externes à QGIS (prise en main, exploitation de données)",
       "Formation de partenaires externes à Metashape (chaîne photogrammétrique)",
       "Conception des supports et des séances pratiques",
       "Suivi des acquis et accompagnement à l'autonomie",
     ],
-    livrables: [
-      "Programmes de formation",
-      "Supports pédagogiques",
-      "Séances pratiques terrain",
-    ],
-    result: `Les auditeurs ont acquis une <strong>autonomie opérationnelle</strong>
-    sur les équipements et logiciels formés. Ces formations illustrent ma capacité
-    à prendre un recul pédagogique sur les outils que j'utilise quotidiennement
-    et à les transmettre de manière structurée.`,
+    livrables:["Programmes de formation","Supports pédagogiques","Séances pratiques terrain"],
+    result:`Les auditeurs ont acquis une <strong>autonomie opérationnelle</strong> sur les équipements et logiciels formés. Ces formations illustrent ma capacité à prendre un recul pédagogique sur des outils techniques et à les transmettre de manière structurée à des publics variés.`,
   },
 
-  /* ══ 7. LiDAR & Ortho — Centrafrique (241 km) ══ */
   centrafrique: {
     title: "Levé LiDAR & Orthophotographie — Route Bossembélé–Baoro, Centrafrique",
     category: "LiDAR · International · Route 241 km",
     role: "Pilote drone, Production ortho, Traitement LiDAR, Vectorisation & Cartographie",
     image: "proj-centrafrique.jpg",
-    gallery: ["proj-centrafrique-2.jpg", "proj-centrafrique-3.jpg"],
-    meta: [
-      { label: "BIG-BTP · Centrafrique", type: "client" },
-      { label: "2022 – 2024", type: "period" },
-      { label: "CDI", type: "type" },
-      { label: "CloudCompare", type: "tool" },
-      { label: "Pix4D", type: "tool" },
-      { label: "QGIS", type: "tool" },
+    gallery: ["proj-centrafrique-2.jpg","proj-centrafrique-3.jpg"],
+    meta:[
+      {label:"BIG-BTP · Centrafrique",type:"client"},
+      {label:"2022 – 2024",type:"period"},
+      {label:"CDI",type:"type"},
+      {label:"CloudCompare",type:"tool"},
+      {label:"Pix4D",type:"tool"},
+      {label:"QGIS",type:"tool"},
     ],
-    context: `Mission internationale en République Centrafricaine portant sur
-    un <strong>linéaire de 241 km</strong> (route Bossembélé–Baoro).
-    Ce projet d'envergure mobilisait l'intégralité de la chaîne de production
-    géomatique : acquisition aérienne, traitement photogrammétrique,
-    traitement LiDAR, vectorisation et production cartographique finale.`,
-    mission: [
+    links: [],
+    context:`Mission internationale en République Centrafricaine portant sur un <strong>linéaire de 241 km</strong> (route Bossembélé–Baoro). Ce projet d'envergure mobilisait l'intégralité de la chaîne de production géomatique : acquisition aérienne, traitement photogrammétrique, traitement LiDAR, vectorisation et production cartographique finale.`,
+    mission:[
       "Pilotage drone sur 241 km de corridor routier",
       "Stéréo-préparation et traitement photogrammétrique",
       "Traitement LiDAR (filtrage, classification, production MNT/MNS)",
       "Vectorisation des éléments terrain (réseau, bâti, végétation)",
       "Production des cartes de synthèse pour la maîtrise d'ouvrage",
     ],
-    livrables: [
-      "Orthophotos du corridor (241 km)",
-      "MNT / MNS LiDAR",
-      "Couches vectorisées",
-      "Cartes de synthèse routière",
-    ],
-    result: `Cette mission internationale a démontré ma capacité à opérer
-    sur des <strong>projets de grande ampleur en environnement exigeant</strong>
-    (logistique, terrain difficile, linéaire important), en assurant l'intégralité
-    de la chaîne de production de manière autonome.`,
+    livrables:["Orthophotos du corridor (241 km)","MNT / MNS LiDAR","Couches vectorisées","Cartes de synthèse routière"],
+    result:`Cette mission internationale a démontré ma capacité à opérer sur des <strong>projets de grande ampleur en environnement exigeant</strong> (logistique complexe, terrain difficile, linéaire important), en assurant l'intégralité de la chaîne de production de manière autonome.`,
   },
 
-  /* ══ 8. Automatisation SIG — Python & Interface Tkinter ══ */
   autoSIG: {
     title: "Automatisation SIG — Outil de découpe Python & Workflows BD",
     category: "Python · Automatisation · La Cove",
-    role: "Développeur — Script Python, Interface Tkinter, Workflows BD",
+    role: "Développeur SIG — Script Python, Interface Tkinter, Workflows BD",
     image: "proj-autoSIG.jpg",
-    gallery: ["proj-autoSIG-2.jpg", "proj-autoSIG-3.jpg"],
-    meta: [
-      { label: "La Cove · Carpentras", type: "client" },
-      { label: "Oct. 2025 – présent", type: "period" },
-      { label: "Alternance", type: "type" },
-      { label: "Python / GeoPandas", type: "tool" },
-      { label: "Tkinter", type: "tool" },
-      { label: "PostgreSQL / PostGIS", type: "tool" },
-      { label: "QGIS", type: "tool" },
+    gallery: ["proj-autoSIG-2.jpg","proj-autoSIG-3.jpg"],
+    meta:[
+      {label:"La Cove · Carpentras",type:"client"},
+      {label:"Oct. 2025 – présent",type:"period"},
+      {label:"Alternance",type:"type"},
+      {label:"Python / GeoPandas",type:"tool"},
+      {label:"Tkinter",type:"tool"},
+      {label:"PostgreSQL / PostGIS",type:"tool"},
+      {label:"QGIS",type:"tool"},
     ],
-    context: `Dans le cadre de mon alternance à La Cove (intercommunalité),
-    j'ai développé des <strong>outils d'automatisation SIG</strong> pour réduire
-    les tâches répétitives des agents. Le besoin principal : les agents devaient
-    fréquemment ramener des entités géographiques à chaque commune,
-    une opération chronophage et source d'erreurs réalisée manuellement.`,
-    mission: [
+    /* Remplacez l'URL par votre vrai repo quand il est public */
+    links: [
+      { type:"github", label:"Voir le code", url:"https://github.com/AngeOrel" },
+    ],
+    context:`Dans le cadre de mon alternance à La Cove (intercommunalité), j'ai développé des <strong>outils d'automatisation SIG</strong> pour réduire les tâches répétitives des agents. Le besoin principal : les agents devaient fréquemment ramener des entités géographiques à chaque commune — une opération chronophage et source d'erreurs réalisée manuellement.`,
+    mission:[
       "Développement d'un outil de découpe avancée en Python avec GeoPandas",
       "Création d'une interface graphique Tkinter accessible aux agents non-développeurs",
       "Automatisation des découpes par commune — traitement de masse en un clic",
       "Automatisation de workflows pour l'insertion de tables dans les bases de données",
       "Tests, documentation et déploiement auprès des agents",
     ],
-    livrables: [
-      "Outil Python + interface Tkinter (découpe avancée)",
-      "Scripts d'automatisation des workflows BD",
-      "Documentation utilisateur",
-    ],
-    result: `L'outil développé a <strong>significativement réduit le temps de traitement</strong>
-    des agents pour les découpes communales. L'interface Tkinter permet une utilisation
-    autonome sans compétences en programmation. L'automatisation des workflows BD
-    a également fiabilisé l'intégration des données dans les bases PostGIS.`,
+    livrables:["Outil Python + interface Tkinter (découpe avancée)","Scripts d'automatisation des workflows BD","Documentation utilisateur"],
+    result:`L'outil développé a <strong>significativement réduit le temps de traitement</strong> des agents pour les découpes communales. L'interface Tkinter permet une utilisation autonome sans compétences en programmation. L'automatisation des workflows BD a également fiabilisé l'intégration des données dans les bases PostGIS.`,
   },
 
-  /* ══ 9. Cartographie thématique ══ */
   carto: {
     title: "Réalisation de cartes thématiques",
     category: "Cartographie · Sémiologie graphique",
     role: "Cartographe — Conception & Production",
     image: "proj-carto.jpg",
-    gallery: ["proj-carto-2.jpg", "proj-carto-3.jpg", "proj-carto-4.jpg"],
-    meta: [
-      { label: "BIG-BTP / La Cove", type: "client" },
-      { label: "2022 – présent", type: "period" },
-      { label: "Divers", type: "type" },
-      { label: "QGIS", type: "tool" },
-      { label: "ArcGIS", type: "tool" },
+    gallery: ["proj-carto-2.jpg","proj-carto-3.jpg","proj-carto-4.jpg"],
+    meta:[
+      {label:"BIG-BTP / La Cove",type:"client"},
+      {label:"2022 – présent",type:"period"},
+      {label:"Divers",type:"type"},
+      {label:"QGIS",type:"tool"},
+      {label:"ArcGIS",type:"tool"},
     ],
-    context: `Tout au long de mes expériences, j'ai réalisé des <strong>cartes thématiques</strong>
-    dans des contextes variés : restitution de données terrain, livrables clients,
-    aide à la décision pour la maîtrise d'ouvrage. Chaque carte mobilise
-    des choix de sémiologie graphique adaptés au public et à l'usage.`,
-    mission: [
+    links: [],
+    context:`Tout au long de mes expériences, j'ai réalisé des <strong>cartes thématiques</strong> dans des contextes variés : restitution de données terrain, livrables clients, aide à la décision pour la maîtrise d'ouvrage. Chaque carte mobilise des choix de sémiologie graphique adaptés au public et à l'usage.`,
+    mission:[
       "Conception et réalisation de cartes thématiques multi-contextes",
       "Mise en page cartographique et sémiologie graphique",
       "Adaptation au public cible (technique, décideurs, grand public)",
       "Cartes PAR, cartes d'état des lieux, cartes de synthèse travaux",
     ],
-    livrables: [
-      "Cartes thématiques multi-formats",
-      "Atlas cartographiques",
-      "Cartes PAR et restitution terrain",
-    ],
-    result: `La cartographie est un fil conducteur de l'ensemble de mes projets.
-    Elle constitue le <strong>point de rencontre entre la donnée technique
-    et la décision</strong> — traduire des données complexes en une image
-    lisible et exploitable par des non-spécialistes.`,
+    livrables:["Cartes thématiques multi-formats","Atlas cartographiques","Cartes PAR et restitution terrain"],
+    result:`La cartographie est un fil conducteur de l'ensemble de mes projets. Elle constitue le <strong>point de rencontre entre la donnée technique et la décision</strong> — traduire des données complexes en une image lisible et exploitable par des non-spécialistes.`,
   },
-
-  empty: null,
 };
 
+/* ─── FONCTIONS PANEL ─── */
 function openPanel(key) {
   const data = projects[key];
-  if (!data) {
-    document.getElementById('panelContent').innerHTML = buildEmpty();
-  } else {
-    document.getElementById('panelContent').innerHTML = buildPanel(data);
-  }
+  const content = document.getElementById('panelContent');
+  content.innerHTML = data ? buildPanel(data) : buildEmpty();
   document.getElementById('sidePanel').classList.add('open');
   document.getElementById('overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  // Scroll panel to top on open
+  document.getElementById('sidePanel').scrollTop = 0;
 }
 
 function closePanel() {
@@ -919,73 +1014,91 @@ function closePanel() {
   document.body.style.overflow = '';
 }
 
-function buildPanel(data) {
-  const metaChips = data.meta.map(m => `<span class="meta-chip ${m.type}">${m.label}</span>`).join('');
-  const missionList = data.mission.map(m => `<li>${m}</li>`).join('');
-  const livrablesChips = data.livrables.map(l => `<span class="livrable-chip">${l}</span>`).join('');
-  const galleryImages = data.gallery.map(img => `
-    <div class="gallery-img">
-      <img src="${img}" alt="" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;color:var(--ink-muted);font-size:.8rem;\">Image manquante<br>${img}</div>'">
-    </div>
-  `).join('');
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+function buildPanel(d) {
+  const meta    = d.meta.map(m => `<span class="meta-chip ${m.type}">${m.label}</span>`).join('');
+  const missions= d.mission.map(m => `<li>${m}</li>`).join('');
+  const livrabl = d.livrables.map(l => `<span class="livrable-chip">${l}</span>`).join('');
+
+  // Galerie — uniquement si images présentes
+  const galleryHTML = d.gallery.length ? `
+    <div class="panel-section">
+      <div class="panel-section-title">Galerie</div>
+      <div class="panel-gallery">
+        ${d.gallery.map(img => `
+          <div class="gallery-img">
+            <img src="${img}" alt="" loading="lazy"
+                 onerror="this.parentElement.innerHTML='<div style=\\"display:flex;align-items:center;justify-content:center;height:100%;font-size:.72rem;color:var(--ink-muted);\\">Image manquante</div>'">
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+
+  // Liens WebSIG / GitHub — uniquement si définis
+  const linksHTML = d.links && d.links.length ? `
+    <div class="panel-section">
+      <div class="panel-section-title">Liens</div>
+      <div class="panel-links">
+        ${d.links.map(l => `
+          <a href="${l.url}" target="_blank" rel="noopener" class="panel-link-btn ${l.type}">
+            ${l.type === 'websig'
+              ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`
+              : `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.74-1.33-1.74-1.09-.75.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.68.83.57C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>`}
+            ${l.label}
+          </a>`).join('')}
+      </div>
+    </div>` : '';
 
   return `
     <div class="panel-hero">
-      <img src="${data.image}" alt="${data.title}" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:var(--paper-warm);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink-muted);font-size:.9rem;\"><svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/></svg><span>Image manquante<br>${data.image}</span></div>'">
-      <div class="panel-cat-badge">${data.category}</div>
+      <img src="${d.image}" alt="${d.title}" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="panel-hero-placeholder" style="display:none;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span>${d.image}</span>
+      </div>
+      <div class="panel-cat-badge">${d.category}</div>
     </div>
     <div class="panel-body">
-      <h1 class="panel-title">${data.title}</h1>
+      <h2 class="panel-title">${d.title}</h2>
       <div class="panel-role">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>${data.role}</span>
+        <span>${d.role}</span>
       </div>
-      <div class="panel-meta">${metaChips}</div>
+      <div class="panel-meta">${meta}</div>
+      ${linksHTML}
       <div class="panel-section">
         <div class="panel-section-title">Contexte</div>
-        <div class="panel-text">${data.context}</div>
+        <p class="panel-text">${d.context}</p>
       </div>
       <div class="panel-section">
-        <div class="panel-section-title">Mission</div>
-        <ul class="panel-list">${missionList}</ul>
+        <div class="panel-section-title">Missions réalisées</div>
+        <ul class="panel-list">${missions}</ul>
       </div>
       <div class="panel-section">
         <div class="panel-section-title">Livrables</div>
-        <div class="panel-livrables">${livrablesChips}</div>
+        <div class="panel-livrables">${livrabl}</div>
       </div>
       <div class="panel-section">
         <div class="panel-section-title">Résultat</div>
-        <div class="panel-text">${data.result}</div>
+        <p class="panel-text">${d.result}</p>
       </div>
-      <div class="panel-section">
-        <div class="panel-section-title">Galerie</div>
-        <div class="panel-gallery">${galleryImages}</div>
-      </div>
-    </div>
-  `;
+      ${galleryHTML}
+    </div>`;
 }
 
 function buildEmpty() {
-  return `
-    <div class="panel-body" style="justify-content:center;text-align:center;">
-      <div style="color:var(--ink-muted);font-size:1.2rem;margin-bottom:1rem;">🚧 Projet à venir</div>
-      <div style="color:var(--ink-soft);font-size:.9rem;">Les détails de ce projet seront bientôt disponibles.</div>
-    </div>
-  `;
+  return `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:3rem;text-align:center;gap:1rem;color:var(--ink-muted);">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".8" opacity=".25"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+    <p style="font-weight:500;color:var(--ink)">Ce projet arrive bientôt</p>
+  </div>`;
 }
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closePanel();
-  }
+/* ─── CV iframe fallback ─── */
+document.getElementById('cvIframe').addEventListener('error', () => {
+  document.getElementById('cvIframe').style.display = 'none';
+  document.getElementById('cvFallback').style.display = 'block';
 });
 </script>
-<div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
-<div class="side-panel" id="sidePanel">
-  <button class="panel-close" onclick="closePanel()" aria-label="Fermer">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-  <div id="panelContent"></div>
-</div>
 </body>
 </html>
