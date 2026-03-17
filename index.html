@@ -219,12 +219,19 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
       </div>
     </div>
     <div>
-      <div class="qb-label">Référence</div>
-      <div class="ref-item">
-        <strong>Guillaume Fayaud</strong>
-        Naomis<br>
-        <a href="tel:+33664681337">+33 6 64 68 13 37</a><br>
-        <a href="mailto:g.fayaud@naomis.fr">g.fayaud@naomis.fr</a>
+      <div class="qb-label">Références</div>
+      <div style="display:flex;flex-direction:column;gap:.8rem;">
+        <div class="ref-item">
+          <strong>Guillaume Fayaud</strong>
+          Naomis<br>
+          <a href="mailto:g.fayaud@naomis.fr">g.fayaud@naomis.fr</a>
+        </div>
+        <div class="ref-item">
+          <strong>Mamadou FOFANA</strong>
+          BIG-BTP<br>
+          <a href="mailto:fofanam1@yahoo.fr">fofanam1@yahoo.fr</a>
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -248,10 +255,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
         <div class="exp-list">
           <!-- La Cove — logo : placez logo-lacove.png dans le dossier -->
           <div class="exp-card">
-            <div class="exp-logo">
-              <img src="logo-lacove.png" alt="La Cove" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-              <div class="exp-logo-fallback" style="display:none">LC</div>
-            </div>
+            <a href="https://www.lacove.fr/accueil.html" target="_blank">
+              <div class="exp-logo">
+                <img src="logo-lacove.png" alt="La Cove" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="exp-logo-fallback" style="display:none">LC</div>
+              </div>
+            </a>
             <div>
               <div class="exp-role">Géomaticien SIG / DATA</div>
               <div class="exp-company">La Cove · Carpentras,France</div>
@@ -261,10 +270,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
           </div>
           <!-- Naomis — logo : placez naomis.png dans le dossier -->
           <div class="exp-card">
-            <div class="exp-logo">
-              <img src="naomis.png" alt="Naomis" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-              <div class="exp-logo-fallback" style="display:none">N</div>
-            </div>
+            <a href="https://naomis.fr/" target="_blank">
+              <div class="exp-logo">
+                <img src="naomis.png" alt="Naomis" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="exp-logo-fallback" style="display:none">N</div>
+              </div>
+            </a>
             <div>
               <div class="exp-role">Géomaticien SIG 3D</div>
               <div class="exp-company">Naomis · Nantes, France</div>
@@ -274,16 +285,46 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
           </div>
           <!-- BIG-BTP — logo : placez logo-bigbtp.png dans le dossier -->
           <div class="exp-card">
-            <div class="exp-logo">
-              <img src="logo-bigbtp.png" alt="BIG-BTP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-              <div class="exp-logo-fallback" style="display:none">BB</div>
-            </div>
+            <a href="https://bigbtp.com/" target="_blank">
+              <div class="exp-logo">
+                <img src="logo-bigbtp.png" alt="BIG-BTP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="exp-logo-fallback" style="display:none">BB</div>
+              </div>
+            </a>
             <div>
               <div class="exp-role">Géomètre-topographe / Télépilote drone</div>
               <div class="exp-company">BIG-BTP · Abidjan, Côte d'Ivoire</div>
               <span class="exp-tag tag-cdi">CDI</span>
             </div>
             <div class="exp-period">Oct. 2022<br>→ Août 2024</div>
+          </div>
+          <!-- INPHB — logo : placez logo-inphb.png dans le dossier -->
+          <div class="exp-card">
+            <a href="https://inphb.edu.ci/" target="_blank">
+              <div class="exp-logo">
+                <img src="logo-inphb.png" alt="INPHB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="exp-logo-fallback" style="display:none">INPHB</div>
+              </div>
+            </a>
+            <div>
+              <div class="exp-role">Géomètre-topographe</div>
+              <div class="exp-company">Département Génie Rural et Sciences Géographiques · Yamoussoukro, Côte d'Ivoire</div>
+              <span class="exp-tag tag-stage">Stage</span>
+            </div>
+            <div class="exp-period">févr. 2022<br>→ juin 2022</div>
+          </div>
+          <!-- ATELIER BENCAT -->
+          <div class="exp-card">
+            <div class="exp-logo">
+              <img src="" alt="ATELIER BENCAT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:none;">
+              <div class="exp-logo-fallback" style="display:flex;">AB</div>
+            </div>
+            <div>
+              <div class="exp-role">Géomètre-topographe</div>
+              <div class="exp-company">ATELIER BENCAT · Abidjan, Côte d'Ivoire</div>
+              <span class="exp-tag tag-stage">Stage</span>
+            </div>
+            <div class="exp-period">juil. 2021<br>→ août 2021</div>
           </div>
         </div>
       </div>
@@ -355,12 +396,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
         <h2 class="section-title">Logiciels</h2>
         <div class="tools-group-label">SIG &amp; Géomatique</div>
         <div class="tools-wrap">
-          <div class="tool-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/QGIS_logo%2C_2017.svg/32px-QGIS_logo%2C_2017.svg.png" alt="QGIS" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">Q</span>QGIS</div>
-          <div class="tool-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/ArcGIS_logo.png/32px-ArcGIS_logo.png" alt="ArcGIS" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">A</span>ArcGIS</div>
-          <div class="tool-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/AutoCAD_2023_logo.svg/32px-AutoCAD_2023_logo.svg.png" alt="AutoCAD" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">AC</span>AutoCAD / Covadis</div>
-          <div class="tool-chip"><img src="https://www.agisoft.com/favicon.ico" alt="Metashape" style="border-radius:3px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">MS</span>Metashape</div>
-          <div class="tool-chip"><img src="https://www.cloudcompare.org/doc/wiki/images/thumb/3/3b/CC_logo.png/32px-CC_logo.png" alt="CloudCompare" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">CC</span>CloudCompare</div>
-          <div class="tool-chip"><img src="https://www.trimble.com/favicon.ico" alt="eCognition" style="width:16px;height:16px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">eC</span>eCognition</div>
+          <div class="tool-chip"><img src="https://qgis.org/en/_static/images/qgis-logo.png" alt="QGIS" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">Q</span>QGIS</div>
+          <div class="tool-chip"><img src="https://developers.arcgis.com/assets/img/logo-arcgis.png" alt="ArcGIS" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">A</span>ArcGIS</div>
+          <div class="tool-chip"><img src="https://damassets.autodesk.net/content/dam/autodesk/www/product-imagery/badge-imagery/autocad-logo-color-204.png" alt="AutoCAD" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">AC</span>AutoCAD / Covadis</div>
+          <div class="tool-chip"><img src="https://www.agisoft.com/wp-content/themes/agisoft/images/logo.png" alt="Metashape" style="border-radius:3px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">MS</span>Metashape</div>
+          <div class="tool-chip"><img src="https://www.cloudcompare.org/images/logo.png" alt="CloudCompare" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">CC</span>CloudCompare</div>
+          <div class="tool-chip"><img src="https://www.ecognition.com/wp-content/themes/ecognition/images/logo.png" alt="eCognition" style="width:16px;height:16px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">eC</span>eCognition</div>
         </div>
         <div class="tools-group-label">Dev &amp; Productivité</div>
         <div class="tools-wrap">
