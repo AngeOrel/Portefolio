@@ -132,6 +132,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.3);text-align:center;padding:1.5rem;font-size:.72rem;}
 @media(max-width:1100px){.comp-grid{grid-template-columns:repeat(2,1fr);}.quick-bar-inner{grid-template-columns:repeat(2,1fr);}.projects-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:860px){.two-col,.two-col-equal,.parcours-wrap{grid-template-columns:1fr;gap:2.5rem;}.hero-inner{grid-template-columns:1fr;}.hero-photo{display:none;}.comp-grid{grid-template-columns:1fr;}.skills-layout{grid-template-columns:1fr;}nav .nav-links{display:none;}.cv-frame-wrap iframe{height:500px;}.projects-grid{grid-template-columns:1fr;}.quick-bar-inner{grid-template-columns:1fr;}}
+.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s;}.panel-overlay.open{opacity:1;pointer-events:auto;}
+.side-panel{position:fixed;top:0;right:0;width:min(640px,95vw);height:100vh;background:var(--white);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:310;overflow-y:auto;display:flex;flex-direction:column;}.side-panel.open{transform:translateX(0);}
+.panel-close{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.1);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:320;border:none;}.panel-close svg{stroke-width:2.2;}
+.panel-hero{aspect-ratio:16/7;overflow:hidden;position:relative;}.panel-hero img{width:100%;height:100%;object-fit:cover;}
+.panel-cat-badge{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,.7);color:#fff;padding:.4rem .8rem;border-radius:6px;font-size:.75rem;font-weight:500;}
+.panel-body{flex:1;overflow-y:auto;padding:1.6rem 1.8rem;display:flex;flex-direction:column;gap:1.5rem;}
+.panel-title{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:600;color:var(--ink);line-height:1.2;}
+.panel-role{display:flex;align-items:center;gap:.6rem;font-size:.88rem;font-weight:600;color:var(--accent);background:var(--accent-pale);padding:.55rem 1rem;border-radius:8px;}
+.panel-role svg{width:18px;height:18px;flex-shrink:0;}
+.panel-meta{display:flex;flex-wrap:wrap;gap:.5rem;}
+.meta-chip{display:inline-block;padding:.3rem .7rem;border-radius:20px;font-size:.75rem;font-weight:500;}
+.meta-chip.client{background:var(--blue-pale);color:var(--blue);}
+.meta-chip.period{background:var(--paper-warm);color:var(--ink-muted);}
+.meta-chip.type{background:var(--accent-pale);color:var(--accent);}
+.meta-chip.tool{background:var(--gold-pale);color:var(--gold);}
+.panel-section{display:flex;flex-direction:column;gap:.8rem;}
+.panel-section-title{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:.6rem;}.panel-section-title::after{content:'';flex:1;height:1px;background:var(--line);}
+.panel-text{font-size:.88rem;color:var(--ink-soft);line-height:1.78;font-weight:300;}
+.panel-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;}
+.panel-list li{display:flex;align-items:flex-start;gap:.6rem;font-size:.88rem;color:var(--ink-soft);line-height:1.6;}
+.panel-list li::before{content:'→';color:var(--accent-lt);font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.panel-livrables{display:flex;flex-wrap:wrap;gap:.5rem;}
+.livrable-chip{display:inline-block;padding:.4rem .8rem;background:var(--accent-pale);color:var(--accent);border-radius:6px;font-size:.8rem;font-weight:500;border:1px solid var(--accent-lt);transition:all .15s;}
+.livrable-chip:hover{background:var(--accent);color:#fff;}
+.panel-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}.gallery-img{border-radius:6px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;transition:transform .15s;}
+.gallery-img:hover{transform:scale(1.02);}
+.gallery-img img{width:100%;height:100%;object-fit:cover;}
+@media(max-width:500px){.panel-gallery{grid-template-columns:1fr;}}.proj-card.has-detail{cursor:pointer;}
+.proj-card.has-detail::after{content:'Voir →';position:absolute;bottom:1rem;right:1rem;background:var(--accent);color:#fff;padding:.3rem .6rem;border-radius:4px;font-size:.7rem;font-weight:600;opacity:0;transform:translateY(10px);transition:all .2s;}
+.proj-card.has-detail:hover::after{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
@@ -199,8 +229,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
   <div class="quick-bar-inner">
     <div>
       <div class="qb-label">Langues</div>
-      <div class="lang-row"><span>🇫🇷 Français</span><span class="lang-level">Langue maternelle</span></div>
-      <div class="lang-row"><span>🇬🇧 Anglais</span><span class="lang-level">B1 — Opérationnel</span></div>
+      <div class="lang-row"><span> 🇫🇷 Français</span><span class="lang-level">Langue maternelle</span></div>
+      <div class="lang-row"><span> 🇬🇧 Anglais</span><span class="lang-level">B1 — Opérationnel</span></div>
     </div>
     <div>
       <div class="qb-label">Centres d'intérêt</div>
@@ -403,6 +433,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
           <div class="tool-chip"><img src="https://damassets.autodesk.net/content/dam/autodesk/www/product-imagery/badge-imagery/autocad-logo-color-204.png" alt="AutoCAD" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">AC</span>AutoCAD / Covadis</div>
           <div class="tool-chip"><img src="https://www.agisoft.com/wp-content/themes/agisoft/images/logo.png" alt="Metashape" style="border-radius:3px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">MS</span>Metashape</div>
           <div class="tool-chip"><img src="https://www.cloudcompare.org/images/logo.png" alt="CloudCompare" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">CC</span>CloudCompare</div>
+          <div class="tool-chip"><img src="https://www.bluemarblegeo.com/wp-content/uploads/2020/04/global-mapper-logo.png" alt="Global Mapper" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">GM</span>Global Mapper</div>
           <div class="tool-chip"><img src="https://www.ecognition.com/wp-content/themes/ecognition/images/logo.png" alt="eCognition" style="width:16px;height:16px;" onerror="this.style.display='none';this.nextSibling.style.display='flex';"><span class="logo-fb">eC</span>eCognition</div>
         </div>
         <div class="tools-group-label">Dev &amp; Productivité</div>
@@ -430,43 +461,51 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
   <!-- PROJETS -->
   <section class="section-wrap" id="projets">
     <div class="section-label">Réalisations</div>
-    <h2 class="section-title">Mes projets</h2>
+    <h2 class="section-title">Projets majeurs réalisés</h2>
+    <div style="font-size:.8rem;color:var(--ink-muted);font-style:italic;margin-bottom:2rem;">
+      La majorité de ces projets étant récents et certaines données restant la propriété
+      des entreprises commanditaires, il ne m'a pas été possible de fournir davantage de visuels.
+    </div>
     <!--
       AJOUTER UNE IMAGE : dans .proj-thumb, ajoutez <img src="votre-image.jpg" alt="...">
       et supprimez le bloc .proj-thumb-placeholder
     -->
     <div class="projects-grid">
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('lagunaire')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">SIG 3D / Jumeau numérique (SDIS Saint-Barthélemy)</div><div class="proj-cat">Modélisation 3D · Stage Naomis</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">Mise en place de 10 quais de transport lagunaire — Lagune Ébrié, Abidjan</div><div class="proj-cat">Topographie · Bathymétrie · Drone</div><div class="proj-coming">Détails à venir</div></div>
       </div>
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('lidar_autoroute')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Automatisation SIG / Data</div><div class="proj-cat">Workflows · Scripts Python</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">Étude LiDAR — Protection de l'autoroute du Nord contre les crues</div><div class="proj-cat">LiDAR · Lasergrammétrie · Chef d'équipe</div><div class="proj-coming">Détails à venir</div></div>
       </div>
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('par_abidjan')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Formation (GPS, stations totales, niveaux, QGIS)</div><div class="proj-cat">Pédagogie · BIG-BTP</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">Plans d'Action de Réinstallation (PAR) — Projets routiers Abidjan</div><div class="proj-cat">Photogrammétrie · Drone · Milieu urbain</div><div class="proj-coming">Détails à venir</div></div>
       </div>
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('par_interieur')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Levés topographiques (GPS / station totale / niveau)</div><div class="proj-cat">Topographie · BIG-BTP</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">Plans d'Action de Réinstallation — Routes intérieures & Collecte terrain</div><div class="proj-cat">Drone · SIG · Collecte de données</div><div class="proj-coming">Détails à venir</div></div>
       </div>
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('sig3d')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Cartes thématiques / Cartographie</div><div class="proj-cat">Cartographie · Analyse spatiale</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">SIG 3D / Jumeau numérique — SDIS Saint-Barthélemy</div><div class="proj-cat">Modélisation 3D · Automatisation · Stage Naomis</div><div class="proj-coming">Détails à venir</div></div>
       </div>
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('formation')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Photogrammétrie / Orthophotos (production)</div><div class="proj-cat">Drone · Pix4D · Metashape</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">Formation topographique & SIG — Génie militaire & partenaires externes</div><div class="proj-cat">Formation · Pédagogie · Transmission</div><div class="proj-coming">Détails à venir</div></div>
       </div>
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('centrafrique')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Études bathymétriques</div><div class="proj-cat">Bathymétrie · BIG-BTP</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">Levé LiDAR & Orthophotographie — Route Bossembélé–Baoro, Centrafrique</div><div class="proj-cat">LiDAR · International · Route 241 km</div><div class="proj-coming">Détails à venir</div></div>
       </div>
-      <div class="proj-card">
+      <div class="proj-card has-detail" onclick="openPanel('autoSIG')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
-        <div class="proj-body"><div class="proj-title">Études LiDAR (relevés / traitement)</div><div class="proj-cat">LiDAR · CloudCompare · BIG-BTP</div><div class="proj-coming">Détails à venir</div></div>
+        <div class="proj-body"><div class="proj-title">Automatisation SIG — Outil de découpe Python & Workflows BD</div><div class="proj-cat">Python · Automatisation · La Cove</div><div class="proj-coming">Détails à venir</div></div>
+      </div>
+      <div class="proj-card has-detail" onclick="openPanel('carto')">
+        <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
+        <div class="proj-body"><div class="proj-title">Réalisation de cartes thématiques</div><div class="proj-cat">Cartographie · Sémiologie graphique</div><div class="proj-coming">Détails à venir</div></div>
       </div>
     </div>
   </section>
@@ -502,5 +541,451 @@ document.getElementById('cvIframe').addEventListener('error',()=>{
   document.getElementById('cvFallback').style.display='block';
 });
 </script>
+<script>
+const projects = {
+
+  /* ══ 1. Transport lagunaire — 10 quais, Lagune Ébrié ══ */
+  lagunaire: {
+    title: "Mise en place de 10 quais de transport lagunaire — Lagune Ébrié, Abidjan",
+    category: "Topographie · Bathymétrie · Drone",
+    role: "Opérateur relevé bathymétrique & Pilote drone",
+    image: "proj-lagunaire.jpg",
+    gallery: ["proj-lagunaire-2.jpg", "proj-lagunaire-3.jpg", "proj-lagunaire-4.jpg"],
+    meta: [
+      { label: "BIG-BTP · Abidjan", type: "client" },
+      { label: "2022 – 2024", type: "period" },
+      { label: "CDI", type: "type" },
+      { label: "Échosondeur", type: "tool" },
+      { label: "Pix4D", type: "tool" },
+      { label: "QGIS", type: "tool" },
+    ],
+    context: `Étude complète préalable à la mise en place de <strong>10 nouveaux quais
+    d'embarquement</strong> sur le réseau de transport lagunaire d'Abidjan, Lagune Ébrié.
+    Ce projet illustre une approche multi-technique : relevés terrestres, milieu aquatique
+    et acquisition aérienne fusionnés en un seul référentiel géographique cohérent.`,
+    mission: [
+      "Levés bathymétriques des plans d'eau sur les 10 sites concernés (opérateur)",
+      "Pilotage drone et acquisition des données aériennes",
+      "Levés de détails topographiques sur les zones d'accès terrestres",
+      "Traitement photogrammétrique et production des orthophotographies",
+      "Production des plans et cartes de synthèse pour la maîtrise d'ouvrage",
+    ],
+    livrables: [
+      "Plans bathymétriques des 10 sites",
+      "Orthophotos haute résolution",
+      "Plans topographiques d'état des lieux",
+      "Référentiel géographique multi-source",
+    ],
+    result: `La combinaison des trois modalités d'acquisition (sol, eau, air) a fourni
+    à la maîtrise d'ouvrage un <strong>référentiel complet et cohérent</strong>
+    pour dimensionner les quais et planifier les travaux sur l'ensemble des 10 sites
+    en milieu lagunaire.`,
+  },
+
+  /* ══ 2. LiDAR — Protection autoroute du Nord ══ */
+  lidar_autoroute: {
+    title: "Étude LiDAR — Protection de l'autoroute du Nord contre les crues",
+    category: "LiDAR · Lasergrammétrie · Chef d'équipe",
+    role: "Chef d'équipe — Stéréo-préparation, Pilote drone, Post-traitement",
+    image: "proj-lidar.jpg",
+    gallery: ["proj-lidar-2.jpg", "proj-lidar-3.jpg", "proj-lidar-4.jpg"],
+    meta: [
+      { label: "BIG-BTP · Côte d'Ivoire", type: "client" },
+      { label: "2022 – 2024", type: "period" },
+      { label: "CDI", type: "type" },
+      { label: "CloudCompare", type: "tool" },
+      { label: "Copre / Coprocess", type: "tool" },
+      { label: "QGIS", type: "tool" },
+    ],
+    context: `Étude topographique LiDAR pour la <strong>protection de l'autoroute du Nord
+    contre la montée des eaux</strong>, portant sur 3 affluents interceptés par la retenue
+    d'eau de l'aménagement hydroélectrique de Singrobo-Ahouatyen, en cours de construction.
+    Mission conduite en tant que <strong>chef d'équipe</strong>, avec responsabilité
+    sur l'intégralité de la chaîne de production.`,
+    mission: [
+      "Planification et stéréo-préparation de la mission de vol (responsable)",
+      "Pilotage drone pour l'acquisition des données LiDAR",
+      "Post-traitement complet du nuage de points (filtrage, classification, densification)",
+      "Production des MNT, MNS, MNE et profils hydrauliques",
+      "Cartographie de synthèse pour les ingénieurs hydrauliciens",
+      "Coordination de l'équipe terrain et respect des délais",
+    ],
+    livrables: [
+      "Nuages de points LiDAR classifiés",
+      "MNT / MNS / MNE haute précision",
+      "Profils en long des 3 affluents",
+      "Cartes de synthèse hydraulique",
+    ],
+    result: `En tant que chef d'équipe, j'ai assuré la <strong>maîtrise complète de la
+    chaîne LiDAR</strong> — de la préparation du vol à la livraison des données
+    post-traitées. Les livrables ont directement alimenté les calculs hydrauliques
+    pour le dimensionnement des ouvrages de protection.`,
+  },
+
+  /* ══ 3. PAR Urbain — Abidjan (milieu urbain habité) ══ */
+  par_abidjan: {
+    title: "Plans d'Action de Réinstallation (PAR) — Projets routiers Abidjan",
+    category: "Photogrammétrie · Drone · Milieu urbain",
+    role: "Pilote drone & Producteur d'orthophotographies",
+    image: "proj-par.jpg",
+    gallery: ["proj-par-2.jpg", "proj-par-3.jpg"],
+    meta: [
+      { label: "BIG-BTP · Abidjan", type: "client" },
+      { label: "2022 – 2024", type: "period" },
+      { label: "CDI", type: "type" },
+      { label: "Pix4D", type: "tool" },
+      { label: "Metashape", type: "tool" },
+      { label: "QGIS", type: "tool" },
+    ],
+    context: `Production d'orthophotographies numériques pour les Plans d'Action de
+    Réinstallation de plusieurs projets routiers à Abidjan, dont le
+    <strong>prolongement du boulevard Mitterrand</strong> et la
+    <strong>réhabilitation de l'ancienne voie de Bingerville</strong>.
+    Contrainte majeure : les zones de travail étaient des <strong>milieux urbains
+    denses et habités</strong>, impliquant une stricte conformité à la réglementation
+    aérienne ivoirienne — plan de vol adapté, autorisations préalables, gestion
+    des espaces aériens contrôlés et de la sécurité au sol.`,
+    mission: [
+      "Obtention des autorisations de vol en zone urbaine habitée",
+      "Adaptation du plan de vol aux contraintes réglementaires et environnementales",
+      "Pilotage drone en milieu urbain dense (gestion obstacles, sécurité sol)",
+      "Traitement photogrammétrique et production des orthophotographies",
+      "Cartographie de synthèse pour les PAR (périmètres impactés, biens, personnes)",
+    ],
+    livrables: [
+      "Orthophotos haute résolution (milieu urbain)",
+      "Cartographies PAR (emprise, biens impactés)",
+      "Plans de vol documentés et conformes",
+    ],
+    result: `La maîtrise des contraintes réglementaires du vol en zone urbaine a permis
+    de <strong>livrer les données dans les délais</strong> tout en garantissant la
+    conformité légale des opérations. Les orthophotographies ont servi de base
+    de référence pour les dossiers PAR soumis aux bailleurs internationaux.`,
+  },
+
+  /* ══ 4. PAR Intérieur — Collecte de données terrain ══ */
+  par_interieur: {
+    title: "Plans d'Action de Réinstallation — Routes intérieures & Collecte terrain",
+    category: "Drone · SIG · Collecte de données",
+    role: "Pilote drone, Production ortho & Concepteur formulaire de collecte",
+    image: "proj-par-int.jpg",
+    gallery: ["proj-par-int-2.jpg", "proj-par-int-3.jpg"],
+    meta: [
+      { label: "BIG-BTP · Côte d'Ivoire", type: "client" },
+      { label: "2022 – 2024", type: "period" },
+      { label: "CDI", type: "type" },
+      { label: "Pix4D", type: "tool" },
+      { label: "KoboToolbox / ODK", type: "tool" },
+      { label: "QGIS", type: "tool" },
+    ],
+    context: `Réalisation de PAR pour des projets routiers en zones rurales de Côte
+    d'Ivoire (Mankono–Zuénoula, Zuénoula–Béoumi, TOUMBOKRO–ANGOVIA).
+    En plus de la production d'orthophotos, ces missions intégraient une
+    <strong>collecte de données socio-spatiales sur les personnes impactées</strong>
+    par les projets (recensement, inventaire des biens, géolocalisation).`,
+    mission: [
+      "Pilotage drone et production des orthophotographies des corridors routiers",
+      "Conception d'un formulaire de collecte terrain pour le recensement des impactés",
+      "Recensement des personnes et familles impactées par les emprises routières",
+      "Levé et géolocalisation des biens impactés (parcelles, bâtiments, cultures)",
+      "Création et alimentation de la base de données des impactés",
+      "Production cartographique PAR (emprise, biens, localisation des impactés)",
+    ],
+    livrables: [
+      "Formulaire de collecte terrain",
+      "Base de données des impactés",
+      "Orthophotos des corridors",
+      "Cartographies PAR complètes",
+    ],
+    result: `La conception du formulaire de collecte a <strong>standardisé et
+    accéléré la saisie terrain</strong>, réduisant les erreurs de ressaisie et
+    facilitant l'intégration directe dans la base de données SIG.
+    Ces dossiers PAR ont été soumis et validés par les bailleurs de fonds internationaux.`,
+  },
+
+  /* ══ 5. Jumeau numérique — SDIS Saint-Barthélemy ══ */
+  sig3d: {
+    title: "SIG 3D / Jumeau numérique — SDIS Saint-Barthélemy",
+    category: "Modélisation 3D · Automatisation · Stage Naomis",
+    role: "Géomaticien SIG 3D — Modélisation, Automatisation & Indicateurs",
+    image: "proj-sig3d.jpg",
+    gallery: ["proj-sig3d-2.jpg", "proj-sig3d-3.jpg", "proj-sig3d-4.jpg"],
+    meta: [
+      { label: "Naomis · Nantes", type: "client" },
+      { label: "Avr. – Sep. 2025", type: "period" },
+      { label: "Stage", type: "type" },
+      { label: "Metashape", type: "tool" },
+      { label: "Python / API Metashape", type: "tool" },
+      { label: "QGIS", type: "tool" },
+      { label: "CloudCompare", type: "tool" },
+    ],
+    context: `Le SDIS de Saint-Barthélemy souhaitait disposer d'un outil de
+    <strong>visualisation 3D de son territoire</strong> pour améliorer la planification
+    des interventions d'urgence. L'enjeu : construire un jumeau numérique opérationnel
+    à partir de données photogrammétriques, enrichi d'indicateurs de risque.`,
+    mission: [
+      "Production des modèles 3D texturés couvrant 30 km² à partir de données photogrammétriques",
+      "Conception et développement d'un workflow automatisé dans Metashape via Python/API Metashape",
+      "Gain de temps x3 sur les traitements — réduction significative de l'intervention humaine",
+      "Construction d'indicateurs de risque spatialisés (accès, hauteur, végétation, occupation du sol)",
+      "Choix et implémentation des fonctionnalités du viewer 3D interactif",
+      "Analyse documentaire, entretiens internes, rédaction de l'étude prospective",
+    ],
+    livrables: [
+      "Modèles 3D texturés (30 km²)",
+      "Workflow automatisé Python/Metashape",
+      "Couches d'indicateurs de risque",
+      "Viewer 3D interactif",
+      "Étude prospective SIG 3D",
+    ],
+    result: `L'automatisation des traitements photogrammétriques via Python/API Metashape
+    a permis de <strong>diviser par 3 le temps de production</strong> des modèles 3D,
+    tout en réduisant les risques d'erreur liés à l'intervention humaine.
+    Le viewer 3D livre aux équipes du SDIS une lecture volumique directe du territoire
+    pour anticiper et planifier les interventions.`,
+  },
+
+  /* ══ 6. Formation — Génie militaire & partenaires ══ */
+  formation: {
+    title: "Formation topographique & SIG — Génie militaire & partenaires externes",
+    category: "Formation · Pédagogie · Transmission",
+    role: "Formateur — Équipements topo, QGIS & Metashape",
+    image: "proj-formation.jpg",
+    gallery: ["proj-formation-2.jpg"],
+    meta: [
+      { label: "BIG-BTP / Projet GAUFF", type: "client" },
+      { label: "2022 – 2024", type: "period" },
+      { label: "CDI", type: "type" },
+      { label: "GPS différentiel", type: "tool" },
+      { label: "Station totale", type: "tool" },
+      { label: "QGIS", type: "tool" },
+      { label: "Metashape", type: "tool" },
+    ],
+    context: `En parallèle de mes missions terrain, j'ai assuré des <strong>sessions
+    de formation à destination du génie militaire (Projet GAUFF)</strong> et de
+    partenaires externes, sur l'utilisation des équipements topographiques et
+    des outils SIG et photogrammétriques. Ces formations reflètent ma capacité
+    à <strong>vulgariser des savoir-faire techniques complexes</strong>
+    auprès d'un public non spécialiste.`,
+    mission: [
+      "Formation au génie militaire : GPS différentiels, stations totales, niveaux (Projet GAUFF)",
+      "Formation de partenaires externes à QGIS (prise en main, exploitation de données)",
+      "Formation de partenaires externes à Metashape (chaîne photogrammétrique)",
+      "Conception des supports et des séances pratiques",
+      "Suivi des acquis et accompagnement à l'autonomie",
+    ],
+    livrables: [
+      "Programmes de formation",
+      "Supports pédagogiques",
+      "Séances pratiques terrain",
+    ],
+    result: `Les auditeurs ont acquis une <strong>autonomie opérationnelle</strong>
+    sur les équipements et logiciels formés. Ces formations illustrent ma capacité
+    à prendre un recul pédagogique sur les outils que j'utilise quotidiennement
+    et à les transmettre de manière structurée.`,
+  },
+
+  /* ══ 7. LiDAR & Ortho — Centrafrique (241 km) ══ */
+  centrafrique: {
+    title: "Levé LiDAR & Orthophotographie — Route Bossembélé–Baoro, Centrafrique",
+    category: "LiDAR · International · Route 241 km",
+    role: "Pilote drone, Production ortho, Traitement LiDAR, Vectorisation & Cartographie",
+    image: "proj-centrafrique.jpg",
+    gallery: ["proj-centrafrique-2.jpg", "proj-centrafrique-3.jpg"],
+    meta: [
+      { label: "BIG-BTP · Centrafrique", type: "client" },
+      { label: "2022 – 2024", type: "period" },
+      { label: "CDI", type: "type" },
+      { label: "CloudCompare", type: "tool" },
+      { label: "Pix4D", type: "tool" },
+      { label: "QGIS", type: "tool" },
+    ],
+    context: `Mission internationale en République Centrafricaine portant sur
+    un <strong>linéaire de 241 km</strong> (route Bossembélé–Baoro).
+    Ce projet d'envergure mobilisait l'intégralité de la chaîne de production
+    géomatique : acquisition aérienne, traitement photogrammétrique,
+    traitement LiDAR, vectorisation et production cartographique finale.`,
+    mission: [
+      "Pilotage drone sur 241 km de corridor routier",
+      "Stéréo-préparation et traitement photogrammétrique",
+      "Traitement LiDAR (filtrage, classification, production MNT/MNS)",
+      "Vectorisation des éléments terrain (réseau, bâti, végétation)",
+      "Production des cartes de synthèse pour la maîtrise d'ouvrage",
+    ],
+    livrables: [
+      "Orthophotos du corridor (241 km)",
+      "MNT / MNS LiDAR",
+      "Couches vectorisées",
+      "Cartes de synthèse routière",
+    ],
+    result: `Cette mission internationale a démontré ma capacité à opérer
+    sur des <strong>projets de grande ampleur en environnement exigeant</strong>
+    (logistique, terrain difficile, linéaire important), en assurant l'intégralité
+    de la chaîne de production de manière autonome.`,
+  },
+
+  /* ══ 8. Automatisation SIG — Python & Interface Tkinter ══ */
+  autoSIG: {
+    title: "Automatisation SIG — Outil de découpe Python & Workflows BD",
+    category: "Python · Automatisation · La Cove",
+    role: "Développeur — Script Python, Interface Tkinter, Workflows BD",
+    image: "proj-autoSIG.jpg",
+    gallery: ["proj-autoSIG-2.jpg", "proj-autoSIG-3.jpg"],
+    meta: [
+      { label: "La Cove · Carpentras", type: "client" },
+      { label: "Oct. 2025 – présent", type: "period" },
+      { label: "Alternance", type: "type" },
+      { label: "Python / GeoPandas", type: "tool" },
+      { label: "Tkinter", type: "tool" },
+      { label: "PostgreSQL / PostGIS", type: "tool" },
+      { label: "QGIS", type: "tool" },
+    ],
+    context: `Dans le cadre de mon alternance à La Cove (intercommunalité),
+    j'ai développé des <strong>outils d'automatisation SIG</strong> pour réduire
+    les tâches répétitives des agents. Le besoin principal : les agents devaient
+    fréquemment ramener des entités géographiques à chaque commune,
+    une opération chronophage et source d'erreurs réalisée manuellement.`,
+    mission: [
+      "Développement d'un outil de découpe avancée en Python avec GeoPandas",
+      "Création d'une interface graphique Tkinter accessible aux agents non-développeurs",
+      "Automatisation des découpes par commune — traitement de masse en un clic",
+      "Automatisation de workflows pour l'insertion de tables dans les bases de données",
+      "Tests, documentation et déploiement auprès des agents",
+    ],
+    livrables: [
+      "Outil Python + interface Tkinter (découpe avancée)",
+      "Scripts d'automatisation des workflows BD",
+      "Documentation utilisateur",
+    ],
+    result: `L'outil développé a <strong>significativement réduit le temps de traitement</strong>
+    des agents pour les découpes communales. L'interface Tkinter permet une utilisation
+    autonome sans compétences en programmation. L'automatisation des workflows BD
+    a également fiabilisé l'intégration des données dans les bases PostGIS.`,
+  },
+
+  /* ══ 9. Cartographie thématique ══ */
+  carto: {
+    title: "Réalisation de cartes thématiques",
+    category: "Cartographie · Sémiologie graphique",
+    role: "Cartographe — Conception & Production",
+    image: "proj-carto.jpg",
+    gallery: ["proj-carto-2.jpg", "proj-carto-3.jpg", "proj-carto-4.jpg"],
+    meta: [
+      { label: "BIG-BTP / La Cove", type: "client" },
+      { label: "2022 – présent", type: "period" },
+      { label: "Divers", type: "type" },
+      { label: "QGIS", type: "tool" },
+      { label: "ArcGIS", type: "tool" },
+    ],
+    context: `Tout au long de mes expériences, j'ai réalisé des <strong>cartes thématiques</strong>
+    dans des contextes variés : restitution de données terrain, livrables clients,
+    aide à la décision pour la maîtrise d'ouvrage. Chaque carte mobilise
+    des choix de sémiologie graphique adaptés au public et à l'usage.`,
+    mission: [
+      "Conception et réalisation de cartes thématiques multi-contextes",
+      "Mise en page cartographique et sémiologie graphique",
+      "Adaptation au public cible (technique, décideurs, grand public)",
+      "Cartes PAR, cartes d'état des lieux, cartes de synthèse travaux",
+    ],
+    livrables: [
+      "Cartes thématiques multi-formats",
+      "Atlas cartographiques",
+      "Cartes PAR et restitution terrain",
+    ],
+    result: `La cartographie est un fil conducteur de l'ensemble de mes projets.
+    Elle constitue le <strong>point de rencontre entre la donnée technique
+    et la décision</strong> — traduire des données complexes en une image
+    lisible et exploitable par des non-spécialistes.`,
+  },
+
+  empty: null,
+};
+
+function openPanel(key) {
+  const data = projects[key];
+  if (!data) {
+    document.getElementById('panelContent').innerHTML = buildEmpty();
+  } else {
+    document.getElementById('panelContent').innerHTML = buildPanel(data);
+  }
+  document.getElementById('sidePanel').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePanel() {
+  document.getElementById('sidePanel').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function buildPanel(data) {
+  const metaChips = data.meta.map(m => `<span class="meta-chip ${m.type}">${m.label}</span>`).join('');
+  const missionList = data.mission.map(m => `<li>${m}</li>`).join('');
+  const livrablesChips = data.livrables.map(l => `<span class="livrable-chip">${l}</span>`).join('');
+  const galleryImages = data.gallery.map(img => `
+    <div class="gallery-img">
+      <img src="${img}" alt="" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;color:var(--ink-muted);font-size:.8rem;\">Image manquante<br>${img}</div>'">
+    </div>
+  `).join('');
+
+  return `
+    <div class="panel-hero">
+      <img src="${data.image}" alt="${data.title}" onerror="this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:var(--paper-warm);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink-muted);font-size:.9rem;\"><svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/></svg><span>Image manquante<br>${data.image}</span></div>'">
+      <div class="panel-cat-badge">${data.category}</div>
+    </div>
+    <div class="panel-body">
+      <h1 class="panel-title">${data.title}</h1>
+      <div class="panel-role">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>${data.role}</span>
+      </div>
+      <div class="panel-meta">${metaChips}</div>
+      <div class="panel-section">
+        <div class="panel-section-title">Contexte</div>
+        <div class="panel-text">${data.context}</div>
+      </div>
+      <div class="panel-section">
+        <div class="panel-section-title">Mission</div>
+        <ul class="panel-list">${missionList}</ul>
+      </div>
+      <div class="panel-section">
+        <div class="panel-section-title">Livrables</div>
+        <div class="panel-livrables">${livrablesChips}</div>
+      </div>
+      <div class="panel-section">
+        <div class="panel-section-title">Résultat</div>
+        <div class="panel-text">${data.result}</div>
+      </div>
+      <div class="panel-section">
+        <div class="panel-section-title">Galerie</div>
+        <div class="panel-gallery">${galleryImages}</div>
+      </div>
+    </div>
+  `;
+}
+
+function buildEmpty() {
+  return `
+    <div class="panel-body" style="justify-content:center;text-align:center;">
+      <div style="color:var(--ink-muted);font-size:1.2rem;margin-bottom:1rem;">🚧 Projet à venir</div>
+      <div style="color:var(--ink-soft);font-size:.9rem;">Les détails de ce projet seront bientôt disponibles.</div>
+    </div>
+  `;
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closePanel();
+  }
+});
+</script>
+<div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
+<div class="side-panel" id="sidePanel">
+  <button class="panel-close" onclick="closePanel()" aria-label="Fermer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div id="panelContent"></div>
+</div>
 </body>
 </html>
