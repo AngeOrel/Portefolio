@@ -856,7 +856,7 @@ const projects = {
     category: "Modélisation 3D · Automatisation · Stage Naomis",
     role: "Géomaticien SIG 3D — Modélisation, Automatisation & Indicateurs",
     image: "image_projet/M1.png",
-    video: "image_projet/video_sig3d.mp4",
+    video: "image_projet/video_sig3d.webmsd.webm",
     gallery: ["image_projet/M2.png","image_projet/M3.png","image_projet/M4.png"],
     meta:[
       {label:"Naomis · Nantes",type:"client"},
@@ -1025,7 +1025,7 @@ function buildPanel(d) {
   // Vidéo — uniquement si présente
   const videoHTML = d.video ? `
     <div class="panel-section">
-      <div class="panel-section-title">Vidéo du projet</div>
+      <div class="panel-section-title">Présentation de la solution</div>
       <video style="width:100%;border-radius:8px;background:var(--paper-warm);" controls>
         <source src="${d.video}" type="video/mp4">
         Votre navigateur ne supporte pas le lecteur vidéo HTML5.
