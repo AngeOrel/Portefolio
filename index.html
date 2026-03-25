@@ -687,7 +687,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);color:rg
       <div class="proj-card" onclick="openPanel('carto')">
         <div class="proj-thumb"><div class="proj-thumb-placeholder"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg><span>Image à venir</span></div></div>
         <div class="proj-body">
-          <div class="proj-title">Réalisation de cartes thématiques</div>
+          <div class="proj-title">Réalisation de cartes thématiques et poster</div>
           <div class="proj-cat">Cartographie · Sémiologie graphique · QGIS</div>
           <div class="proj-role-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Cartographe</div>
         </div>
@@ -855,8 +855,9 @@ const projects = {
     title: "SIG 3D / Jumeau numérique — SDIS Saint-Barthélemy",
     category: "Modélisation 3D · Automatisation · Stage Naomis",
     role: "Géomaticien SIG 3D — Modélisation, Automatisation & Indicateurs",
-    image: "proj-sig3d.jpg",
-    gallery: ["proj-sig3d-2.jpg","proj-sig3d-3.jpg","proj-sig3d-4.jpg"],
+    image: "image_projet/M1.png",
+    video: "image_projet/video_sig3d.mp4",
+    gallery: ["image_projet/M2.png","image_projet/M3.png","image_projet/M4.png"],
     meta:[
       {label:"Naomis · Nantes",type:"client"},
       {label:"Avr. – Sep. 2025",type:"period"},
@@ -944,7 +945,7 @@ const projects = {
     category: "Python · Automatisation · La Cove",
     role: "Développeur SIG — Script Python, Interface Tkinter, Workflows BD",
     image: "proj-autoSIG.jpg",
-    gallery: ["proj-autoSIG-2.jpg","proj-autoSIG-3.jpg"],
+    gallery: ["image_projet/a2.png","proj-autoSIG-3.jpg"],
     meta:[
       {label:"La Cove · Carpentras",type:"client"},
       {label:"Oct. 2025 – présent",type:"period"},
@@ -974,8 +975,8 @@ const projects = {
     title: "Réalisation de cartes thématiques",
     category: "Cartographie · Sémiologie graphique",
     role: "Cartographe — Conception & Production",
-    image: "proj-carto.jpg",
-    gallery: ["proj-carto-2.jpg","proj-carto-3.jpg","proj-carto-4.jpg"],
+    image: "image_projet/carte1.png",
+    gallery: ["image_projet/C2.png","image_projet/C3.png","image_projet/C4.png"],
     meta:[
       {label:"BIG-BTP / La Cove",type:"client"},
       {label:"2022 – présent",type:"period"},
@@ -1020,6 +1021,16 @@ function buildPanel(d) {
   const meta    = d.meta.map(m => `<span class="meta-chip ${m.type}">${m.label}</span>`).join('');
   const missions= d.mission.map(m => `<li>${m}</li>`).join('');
   const livrabl = d.livrables.map(l => `<span class="livrable-chip">${l}</span>`).join('');
+
+  // Vidéo — uniquement si présente
+  const videoHTML = d.video ? `
+    <div class="panel-section">
+      <div class="panel-section-title">Vidéo du projet</div>
+      <video style="width:100%;border-radius:8px;background:var(--paper-warm);" controls>
+        <source src="${d.video}" type="video/mp4">
+        Votre navigateur ne supporte pas le lecteur vidéo HTML5.
+      </video>
+    </div>` : '';
 
   // Galerie — uniquement si images présentes
   const galleryHTML = d.gallery.length ? `
@@ -1083,6 +1094,7 @@ function buildPanel(d) {
         <div class="panel-section-title">Résultat</div>
         <p class="panel-text">${d.result}</p>
       </div>
+      ${videoHTML}
       ${galleryHTML}
     </div>`;
 }
